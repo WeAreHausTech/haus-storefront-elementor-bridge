@@ -1,0 +1,34 @@
+{
+  "name": "haus-storefront-elementor-bridge",
+  "version": "1.0.0",
+  "description": "Elementor bridge for Haus storefront components",
+  "main": "dist/host.js",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@haus-storefront-react/core": "^0.0.14",
+    "@haus-storefront-react/shared-types": "^0.0.14",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@tanstack/react-query": "^5.84.1",
+    "@types/lodash": "^4.17.20",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-i18next": "15.5.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^4.4.0",
+    "vite-plugin-dts": "^3.0.0"
+  }
+}
