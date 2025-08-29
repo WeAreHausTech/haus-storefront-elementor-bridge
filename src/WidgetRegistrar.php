@@ -31,13 +31,30 @@ class WidgetRegistrar
                 ->elements_manager
                 ->add_category('haus-ecom', ['title' => 'Haus ecom']);
 
-            // Register widgets
-            \Elementor\Plugin::instance()
-                ->widgets_manager
-                ->register(new \Haus\StorefrontElementorBridge\Widgets\ExampleWidget());
 
-            // Debug: Check if widget is registered
-            error_log('Haus Bridge: Widget registered - ExampleWidget');
+            // Get enabled widgets from config
+            $enabledWidgets = \Haus\StorefrontElementorBridge\Config\WidgetConfig::getEnabledWidgets();
+
+            // Get widget classes from centralized config
+            $widgetClasses = \Haus\StorefrontElementorBridge\Config\WidgetConfig::getWidgetClasses();
+
+            // Register enabled widgets dynamically
+            foreach ($enabledWidgets as $widgetKey => $isEnabled) {
+                if ($isEnabled && isset($widgetClasses[$widgetKey])) {
+                    $widgetClass = $widgetClasses[$widgetKey];
+
+                    // Check if class exists before registering
+                    if (class_exists($widgetClass)) {
+
+                        \Elementor\Plugin::instance()
+                            ->widgets_manager
+                            ->register(new $widgetClass());
+                        error_log("Haus Bridge: Widget registered - {$widgetKey}");
+                    } else {
+                        error_log("Haus Bridge: Widget class not found - {$widgetClass}");
+                    }
+                }
+            }
         });
     }
 }

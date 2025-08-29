@@ -7,7 +7,6 @@ import {
 import React, { ReactNode } from "react";
 import ReactDOM from "react-dom/client";
 import { BuilderQueryUpdates } from "@haus-storefront-react/shared-types";
-import ecomWidgets from "./widgets";
 import { camelCase, debounce, set } from "lodash";
 // import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 export interface IWidgetsRendererOptions {
@@ -51,7 +50,7 @@ export class WidgetsRenderer {
     (
       dataAttributes: NamedNodeMap,
       widgetProps: ConditionalTemplateProps
-    ) => JSX.Element
+    ) => ReactNode
   > = {};
   translations: ResourceBundle[] = [];
   customComponents: ComponentProviderProps["components"];
@@ -65,7 +64,7 @@ export class WidgetsRenderer {
       (
         dataAttributes: NamedNodeMap,
         widgetProps: ConditionalTemplateProps
-      ) => JSX.Element
+      ) => ReactNode
     >,
     translations?: ResourceBundle[],
     customComponents?: ComponentProviderProps["components"],
@@ -154,17 +153,12 @@ export class WidgetsRenderer {
           { widgetType: typeof widgetType }
         >["props"];
 
-        const ecomWidget =
-          ecomWidgets[camelCase(widgetType) as keyof typeof ecomWidgets];
-        const customerWidget =
+        const widget =
           this.widgets[camelCase(widgetType) as keyof typeof this.widgets];
-        if (customerWidget) {
-          // console.log('customer widget', widgetType)
-          const widgetElement = customerWidget(dataAttributes, widgetProps);
-          this.renderElement(element, widgetElement);
-        } else if (ecomWidget) {
-          // console.log('ecom widget', widgetType)
-          const widgetElement = ecomWidget(dataAttributes);
+
+        if (widget) {
+          const widgetElement = widget(dataAttributes, widgetProps);
+
           this.renderElement(element, widgetElement);
         } else {
           console.error(`Widget ${widgetType} not found`);
