@@ -18,9 +18,9 @@
     "@types/lodash": "^4.17.20",
     "lodash": "^4.17.21",
     "path": "^0.12.7",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-i18next": "15.5.3"
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "react-i18next": "15.7.1"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.0",
