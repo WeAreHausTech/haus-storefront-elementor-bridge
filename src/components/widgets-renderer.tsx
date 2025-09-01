@@ -2,13 +2,12 @@ import {
   VendureDataProviderProps,
   ComponentProviderProps,
   DataProvider,
-  vendureQueryClient,
 } from "@haus-storefront-react/core";
 import React, { JSX, ReactNode } from "react";
 import ReactDOM from "react-dom/client";
 import { BuilderQueryUpdates } from "@haus-storefront-react/shared-types";
 import { camelCase, debounce, set } from "lodash";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient } from "@tanstack/react-query";
 export interface IWidgetsRendererOptions {
   provider: "vendure";
   updates: BuilderQueryUpdates;
@@ -121,24 +120,20 @@ export class WidgetsRenderer {
 
     console.log("widgets", this.widgets);
     console.log("updates", this.updates);
-    console.log("options", this.provider);
+    console.log("options", this.options);
     console.log("sdkInstance", this.sdkInstance);
 
     return ReactDOM.createRoot(shadowRoot).render(
       <React.StrictMode>
-        <QueryClientProvider
-          client={vendureQueryClient as unknown as QueryClient}
+        <DataProvider
+          provider={this.provider}
+          platform="web"
+          updates={this.updates}
+          options={this.options}
+          sdkInstance={this.sdkInstance}
         >
-          <DataProvider
-            provider={this.provider}
-            platform="web"
-            updates={this.updates}
-            options={this.options}
-            sdkInstance={this.sdkInstance}
-          >
-            {children}
-          </DataProvider>
-        </QueryClientProvider>
+          {children}
+        </DataProvider>
       </React.StrictMode>
     );
   }
