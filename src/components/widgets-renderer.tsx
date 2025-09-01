@@ -114,13 +114,6 @@ export class WidgetsRenderer {
       });
     }
 
-    console.log("widgets", this.widgets);
-    console.log("updates", this.updates);
-    console.log("options", this.options);
-    console.log("sdkInstance", this.sdkInstance);
-
-    console.log("element", element);
-
     return ReactDOM.createRoot(shadowRoot).render(
       <React.StrictMode>
         <DataProvider
