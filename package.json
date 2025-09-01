@@ -11,8 +11,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@haus-storefront-react/core": "^0.0.20",
-    "@haus-storefront-react/shared-types": "^0.0.20",
+    "@haus-storefront-react/core": "^0.0.23",
+    "@haus-storefront-react/shared-types": "^0.0.23",
     "@rollup/plugin-terser": "^0.4.4",
     "@tanstack/react-query": "^5.84.1",
     "@types/lodash": "^4.17.20",
@@ -20,12 +20,14 @@
     "path": "^0.12.7",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "react-i18next": "15.7.1"
+    "react-i18next": "15.7.1",
+    "react-native-web": "^0.21.1"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@types/react-native-web": "^0",
     "@vitejs/plugin-react": "^4.0.0",
     "typescript": "^5.0.0",
     "vite": "^4.4.0",

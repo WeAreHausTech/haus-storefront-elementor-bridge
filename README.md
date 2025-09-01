@@ -1,6 +1,6 @@
 # Haus Storefront Elementor Bridge
 
-A simple WordPress plugin that registers Elementor widgets.
+A simple WordPress plugin that registers Elementor widgets for haus ecom components
 
 ## Installation
 
@@ -8,53 +8,29 @@ A simple WordPress plugin that registers Elementor widgets.
 composer require haus/haus-storefront-elementor-bridge
 ```
 
-## Requirements
-
-- WordPress 5.0+
-- Elementor 3.0+
-- PHP 7.4+
-
 ## What it does
 
 This package provides a simple foundation for registering Elementor widgets. It includes:
 
 1. **WidgetRegistrar** - A class that handles widget registration with Elementor
-2. **ExampleWidget** - A sample widget showing how to create custom Elementor widgets
+2. **General elementor widgets** - Elementor widgets with settings to use Haus Storefront React components
+3. **Configuration system** - PHP configuration for widget settings and properties
+4. **Widget renderer** - TypeScript/React component renderer for shadow DOM integration
 
-## Usage
+## Register new widget
 
-After installing via Composer, the plugin will automatically:
+To register a new Elementor widget:
 
-1. Check if Elementor is active
-2. Register the example widget with Elementor
-3. Make the widget available in the Elementor editor
+1. Create a new widget class extending the base widget in `src/Widgets/`
+2. Add your widget configuration in `src/config/WidgetConfig.php`
+3. Enable widget in customer repo by adding it to the enabled widgets filter:
 
-## Example Widget
-
-The included example widget demonstrates:
-
-- Basic widget structure
-- Control registration (text and textarea inputs)
-- Frontend rendering
-- Editor preview
-
-## Extending
-
-To add your own widgets, you can:
-
-1. Create new widget classes that extend `Elementor\Widget_Base`
-2. Register them in the `WidgetRegistrar::register_widgets()` method
-3. Or extend the `WidgetRegistrar` class to add more functionality
-
-## Development
-
-```bash
-# Install dependencies
-composer install
-
-# The plugin will be installed in wp-content/plugins/haus-storefront-elementor-bridge/
 ```
+    add_filter('haus_enabled_widgets', function ($widgets) {
+        $enabledWidgets = [
+            'example-widget' => true,
+        ];
 
-## License
-
-MIT License
+        return $enabledWidgets;
+    });
+```

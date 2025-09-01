@@ -7,7 +7,6 @@ import React, { JSX, ReactNode } from "react";
 import ReactDOM from "react-dom/client";
 import { BuilderQueryUpdates } from "@haus-storefront-react/shared-types";
 import { camelCase, debounce, set } from "lodash";
-import { QueryClient } from "@tanstack/react-query";
 export interface IWidgetsRendererOptions {
   provider: "vendure";
   updates: BuilderQueryUpdates;
@@ -44,7 +43,6 @@ export class WidgetsRenderer {
   updates: BuilderQueryUpdates;
   options: VendureDataProviderProps["options"];
   sdkInstance: VendureDataProviderProps["sdkInstance"];
-  queryClient: QueryClient;
   widgets: Record<
     string,
     (
@@ -81,11 +79,9 @@ export class WidgetsRenderer {
     this.translations = translations || [];
     this.customComponents = customComponents || [];
     this.customWidgetProps = customWidgetProps || [];
-    this.queryClient = new QueryClient();
   }
 
   private async renderElement(element: Element, children: ReactNode) {
-    console.log("hello from widget renderer");
     // const css = await this.fetchCSSContent()
     const shadowRoot = element.attachShadow({ mode: "open" });
 
@@ -122,6 +118,8 @@ export class WidgetsRenderer {
     console.log("updates", this.updates);
     console.log("options", this.options);
     console.log("sdkInstance", this.sdkInstance);
+
+    console.log("element", element);
 
     return ReactDOM.createRoot(shadowRoot).render(
       <React.StrictMode>
