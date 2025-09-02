@@ -8,6 +8,8 @@ namespace Haus\StorefrontElementorBridge\config;
 interface AvailableWidgets
 {
     const EXAMPLE_WIDGET = 'example-widget';
+    const LOGIN_WIDGET = 'login-widget';
+    const RESET_PASSWORD_WIDGET = 'reset-password-widget';
 
 }
 
@@ -26,6 +28,8 @@ class WidgetConfig implements AvailableWidgets
     {
         $defaultWidgets = [
             self::EXAMPLE_WIDGET => false,
+            self::LOGIN_WIDGET => false,
+            self::RESET_PASSWORD_WIDGET => false,
         ];
 
         // Allow customer to override via WordPress filter
@@ -41,6 +45,8 @@ class WidgetConfig implements AvailableWidgets
     {
         return [
             self::EXAMPLE_WIDGET,
+            self::LOGIN_WIDGET,
+            self::RESET_PASSWORD_WIDGET,
         ];
     }
 
@@ -53,7 +59,8 @@ class WidgetConfig implements AvailableWidgets
     {
         return [
             self::EXAMPLE_WIDGET => \Haus\StorefrontElementorBridge\Widgets\ExampleWidget::class,
-
+            self::LOGIN_WIDGET => \Haus\StorefrontElementorBridge\Widgets\Login::class,
+            self::RESET_PASSWORD_WIDGET => \Haus\StorefrontElementorBridge\Widgets\ResetPassword::class,
         ];
     }
 }
