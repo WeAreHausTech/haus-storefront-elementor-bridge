@@ -42,4 +42,9 @@ class Login extends \Elementor\Widget_Base
     </div>
     <?php
   }
+
+  public function get_script_depends()
+  {
+    return ['login'];
+  }
 }

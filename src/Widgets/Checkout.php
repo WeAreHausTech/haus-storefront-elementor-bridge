@@ -51,4 +51,9 @@ class Checkout extends Widget_Base
         </div>
         <?php
     }
+
+    public function get_script_depends()
+    {
+        return ['checkout'];
+    }
 }
