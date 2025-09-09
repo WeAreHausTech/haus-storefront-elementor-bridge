@@ -56,7 +56,11 @@ export class ElementorWidgetRenderer {
         return props;
     }
 
-    render(widget: JSX.Element, widgetType: string) {
+    render(
+        widget: JSX.Element,
+        widgetType: string,
+        getPropsFn: (dataAttributes: NamedNodeMap) => Record<string, string>
+    ) {
         let elements = document.querySelectorAll(
             `[data-widget-type="${widgetType}"]`
         );
@@ -104,7 +108,9 @@ export class ElementorWidgetRenderer {
                 });
             }
 
-            const props = this.propsFromDataAttributes(element.attributes);
+            const props =
+                getPropsFn?.(element.attributes) ||
+                this.propsFromDataAttributes(element.attributes);
             const widgetWithProps = React.cloneElement(widget, props);
 
             return ReactDOM.createRoot(shadowRoot).render(
