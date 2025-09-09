@@ -410,4 +410,9 @@ class ProductList extends Widget_Base
 
         <?php
     }
+
+    public function get_script_depends()
+    {
+        return ['product-list'];
+    }
 }
