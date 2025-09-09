@@ -43,4 +43,9 @@ class ResetPassword extends \Elementor\Widget_Base
         </div>
         <?php
     }
+
+    public function get_script_depends()
+    {
+        return ['reset-password'];
+    }
 }
