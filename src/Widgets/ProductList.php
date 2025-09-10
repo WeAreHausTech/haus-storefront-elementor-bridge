@@ -76,28 +76,8 @@ class ProductList extends Widget_Base
         $this->add_pagination_controls();
         $this->end_controls_section();
 
-        $this->start_controls_section(
-            'section-filter',
-            [
-                'label' => __('Filter', 'haus-ecom-widgets'),
-            ]
-        );
-
         $this->getAvailableFacets();
 
-        $this->add_control(
-            'price_filter_enabled',
-            [
-                'label' => __('Price filter enabled', 'haus-ecom-widgets'),
-                'type' => \Elementor\Controls_Manager::SELECT,
-                'description' => __('Price filter does not support multiple currencies', 'haus-ecom-widgets'),
-                'default' => '0',
-                'options' => [
-                    '0' => __('No', 'haus-ecom-widgets'),
-                    '1' => __('Yes', 'haus-ecom-widgets'),
-                ],
-            ]
-        );
 
         $this->end_controls_section();
     }
@@ -179,17 +159,7 @@ class ProductList extends Widget_Base
             ]
         );
 
-        $this->add_control(
-            'enabled_filters',
-            [
-                'label' => __('Enabled filters:', 'haus-ecom-widgets'),
-                'type' => \Elementor\Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-                'default' => [],
-                'title_field' => '{{{ filter_value }}} {{{ filter_condition }}}',
-                'prevent_empty' => false,
-            ]
-        );
+
     }
 
     public function get_collections()
@@ -276,18 +246,7 @@ class ProductList extends Widget_Base
 
     public function add_pagination_controls()
     {
-        $this->add_control(
-            'sort_enabled',
-            [
-                'label' => __('Enable Sort', 'haus-ecom-widgets'),
-                'type' => \Elementor\Controls_Manager::SELECT,
-                'default' => '0',
-                'options' => [
-                    '0' => __('No', 'haus-ecom-widgets'),
-                    '1' => __('Yes', 'haus-ecom-widgets'),
-                ],
-            ]
-        );
+
 
         $this->add_control(
             'pagination_enabled',
@@ -356,59 +315,56 @@ class ProductList extends Widget_Base
         <div id="placeholderWrapper" style="position: relative; width: 100%; ">
             <div id="<?= $widgetId ?>" class="ecom-components-root productlist-widget" data-widget-type="product-list"
                 data-facet="<?= implode(", ", $facets) ?>" data-collection="<?= $taxonomy ?>"
-                data-take="<?= $settings['products_per_page'] ?>" data-sort-enabled="<?= $settings['sort_enabled'] ?>"
+                data-take="<?= $settings['products_per_page'] ?>"
                 data-pagination-enabled="<?= $settings['pagination_enabled'] ?>"
-                data-price-filter-enabled="<?= $settings['price_filter_enabled'] ?>"
-                data-product-list-identifier="<?= $settings['product_list_identifier'] ?>"
-                data-filter-values="<?= htmlspecialchars(json_encode($settings['enabled_filters']), ENT_QUOTES, 'UTF-8'); ?>">
+                data-product-list-identifier="<?= $settings['product_list_identifier'] ?>" </div>
+                <?php if ($_ENV['ENABLE_SKELETON_PRODUCT_LIST'] === 'true'): ?>
+                    <div id="ph-cards" class="placeholder-cards" style="position:absolute; width: 100%; top: 0; left: 0;">
+                        <?php for ($i = 0; $i < $settings['products_per_page']; $i++): ?>
+                            <div class="placeholder-card">
+                                <div class="placeholder-image"></div>
+                                <div class="placeholder-text"></div>
+                            </div>
+                        <?php endfor; ?>
+                    </div>
+                <?php endif; ?>
             </div>
-            <?php if ($_ENV['ENABLE_SKELETON_PRODUCT_LIST'] === 'true'): ?>
-                <div id="ph-cards" class="placeholder-cards" style="position:absolute; width: 100%; top: 0; left: 0;">
-                    <?php for ($i = 0; $i < $settings['products_per_page']; $i++): ?>
-                        <div class="placeholder-card">
-                            <div class="placeholder-image"></div>
-                            <div class="placeholder-text"></div>
-                        </div>
-                    <?php endfor; ?>
-                </div>
-            <?php endif; ?>
-        </div>
 
 
-        <script>
-            (function () {
-                const productListWidget = document.getElementById('<?= $widgetId ?>');
-                const placeholderCards = document.getElementById('ph-cards');
-                const placeholderCardsHeight = placeholderCards ? placeholderCards.clientHeight : 0;
-                const placeholderWrapper = document.getElementById('placeholderWrapper');
+            <script>
+                (function () {
+                    const productListWidget = document.getElementById('<?= $widgetId ?>');
+                    const placeholderCards = document.getElementById('ph-cards');
+                    const placeholderCardsHeight = placeholderCards ? placeholderCards.clientHeight : 0;
+                    const placeholderWrapper = document.getElementById('placeholderWrapper');
 
-                if (placeholderCards) {
-                    placeholderWrapper.style.height = `${placeholderCardsHeight}px`;
-                }
-
-                window.addEventListener('product-list:data:changed', function (event) {
-                    if (!productListWidget) {
-                        return;
+                    if (placeholderCards) {
+                        placeholderWrapper.style.height = `${placeholderCardsHeight}px`;
                     }
 
-                    const handleShadowRootDetected = () => {
-                        if (productListWidget.shadowRoot) {
-                            // Remove or hide the placeholder cards
-                            if (placeholderCards) {
-                                placeholderCards.remove();
-                                placeholderWrapper.style.height = 'auto';
-                            }
+                    window.addEventListener('product-list:data:changed', function (event) {
+                        if (!productListWidget) {
+                            return;
                         }
-                    };
 
-                    if (productListWidget.shadowRoot) {
-                        handleShadowRootDetected();
-                    }
-                });
-            })();
-        </script>
+                        const handleShadowRootDetected = () => {
+                            if (productListWidget.shadowRoot) {
+                                // Remove or hide the placeholder cards
+                                if (placeholderCards) {
+                                    placeholderCards.remove();
+                                    placeholderWrapper.style.height = 'auto';
+                                }
+                            }
+                        };
 
-        <?php
+                        if (productListWidget.shadowRoot) {
+                            handleShadowRootDetected();
+                        }
+                    });
+                })();
+            </script>
+
+            <?php
     }
 
     public function get_script_depends()

@@ -1,37 +1,37 @@
 {
-    "name": "haus-storefront-elementor-bridge",
-    "version": "1.0.0",
-    "description": "Elementor bridge for Haus storefront components",
-    "main": "dist/host.js",
-    "type": "module",
-    "scripts": {
-        "build": "vite build --config vite.config-build.ts",
-        "dev": "vite",
-        "preview": "vite preview",
-        "type-check": "tsc --noEmit"
-    },
-    "dependencies": {
-        "@haus-storefront-react/core": "^0.0.28",
-        "@haus-storefront-react/shared-types": "^0.0.28",
-        "@rollup/plugin-terser": "^0.4.4",
-        "@tanstack/react-query": "^5.84.1",
-        "@types/lodash": "^4.17.20",
-        "lodash": "^4.17.21",
-        "path": "^0.12.7",
-        "react": "19.1.1",
-        "react-dom": "19.1.1",
-        "react-i18next": "15.7.1",
-        "react-native-web": "^0.21.1"
-    },
-    "devDependencies": {
-        "@rollup/plugin-node-resolve": "^15.0.0",
-        "@types/react": "^19.0.0",
-        "@types/react-dom": "^19.0.0",
-        "@types/react-native-web": "^0",
-        "@vitejs/plugin-react": "^4.0.0",
-        "typescript": "^5.0.0",
-        "vite": "^4.4.0",
-        "vite-plugin-dts": "^3.0.0"
-    },
-    "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
+  "name": "haus-storefront-elementor-bridge",
+  "version": "1.0.0",
+  "description": "Elementor bridge for Haus storefront components",
+  "main": "dist/host.js",
+  "type": "module",
+  "scripts": {
+    "build": "vite build --config vite.config-build.ts",
+    "dev": "vite",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@haus-storefront-react/core": "^0.0.29",
+    "@haus-storefront-react/shared-types": "^0.0.29",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@tanstack/react-query": "^5.84.1",
+    "@types/lodash": "^4.17.20",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "react-i18next": "15.7.1",
+    "react-native-web": "^0.21.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/react-native-web": "^0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^4.4.0",
+    "vite-plugin-dts": "^3.0.0"
+  },
+  "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
 }

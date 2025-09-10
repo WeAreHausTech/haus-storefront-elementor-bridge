@@ -11,21 +11,11 @@ export function getFiltersAttributes(attrs: NamedNodeMap): FiltersAttributes {
     | string
     | undefined;
 
-  const showFiltersAs =
-    (base.showFiltersAs as "dropdown" | "accordion") ?? "dropdown";
-
   const priceFilterEnabled = Boolean((base as any).priceFilterEnabled);
 
   const maxSkeletonLoaders =
     typeof (base as any).maxSkeletonLoaders === "number"
       ? ((base as any).maxSkeletonLoaders as number)
-      : undefined;
-
-  const mobileAsModal = String((base as any).mobileAsModal) === "yes";
-
-  const mobileBreakpoint =
-    typeof (base as any).mobileBreakpoint === "number"
-      ? ((base as any).mobileBreakpoint as number)
       : undefined;
 
   let rawFilters = (base as any).filterValues as
@@ -69,14 +59,13 @@ export function getFiltersAttributes(attrs: NamedNodeMap): FiltersAttributes {
       }))
     : [];
 
-  if (priceFilterEnabled) enabledFilters.push({ type: "price" });
+  if (priceFilterEnabled) {
+    enabledFilters.push({ type: "price" });
+  }
 
   return {
     productListIdentifier,
-    showFiltersAs,
     maxSkeletonLoaders,
-    mobileAsModal,
-    mobileBreakpoint,
     enabledFilters,
   };
 }

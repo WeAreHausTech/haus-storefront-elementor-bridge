@@ -12,7 +12,7 @@ export function getProductListAttributes(
     | undefined;
 
   const facetsRaw = base.facet as unknown;
-  const facets = Array.isArray(facetsRaw)
+  const facetValueIds = Array.isArray(facetsRaw)
     ? (facetsRaw as unknown[])
         .map(String)
         .map((s) => s.trim())
@@ -27,36 +27,13 @@ export function getProductListAttributes(
   const collectionId = (base.collection as string | undefined) ?? undefined;
 
   const enablePagination = Boolean(base.paginationEnabled);
-  const enableSort = Boolean(base.sortEnabled);
-  const priceFilterEnabled = Boolean((base as any).priceFilterEnabled);
   const take = (base as any).take;
-
-  const rawFilters = (base as any).filterValues as
-    | Array<{
-        filter_value: string;
-        filter_condition: "AND" | "OR";
-        filter_label?: string;
-      }>
-    | undefined;
-
-  const filtersArray: EnabledFilter[] = Array.isArray(rawFilters)
-    ? rawFilters.map((f) => ({
-        facetCode: f.filter_value,
-        logicalOperator: f.filter_condition.toLowerCase() as "and" | "or",
-        label: f.filter_label,
-      }))
-    : [];
-
-  if (priceFilterEnabled) filtersArray.push({ type: "price" });
 
   return {
     productListIdentifier,
-    facets,
+    facetValueIds,
     collectionId,
     enablePagination,
-    enableSort,
-    priceFilterEnabled,
-    filtersArray,
     take,
   };
 }
