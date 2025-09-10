@@ -44,4 +44,9 @@ class OrderView extends Widget_Base
 
     <?php
   }
+
+  public function get_script_depends(): array
+  {
+      return ['order-view'];
+  }
 }
