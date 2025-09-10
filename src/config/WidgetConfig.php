@@ -12,7 +12,7 @@ interface AvailableWidgets
     const RESET_PASSWORD_WIDGET = 'reset-password-widget';
     const CHECKOUT_WIDGET = 'checkout-widget';
     const PRODUCT_LIST_WIDGET = 'product-list-widget';
-
+    const ORDER_VIEW_WIDGET = 'order-view-widget';
     const FILTERS_WIDGET = 'filters-widget';
 }
 
@@ -36,6 +36,7 @@ class WidgetConfig implements AvailableWidgets
             self::CHECKOUT_WIDGET => false,
             self::PRODUCT_LIST_WIDGET => false,
             self::FILTERS_WIDGET => false,
+            self::ORDER_VIEW_WIDGET => false,
         ];
 
         // Allow customer to override via WordPress filter
@@ -56,6 +57,7 @@ class WidgetConfig implements AvailableWidgets
             self::CHECKOUT_WIDGET,
             self::PRODUCT_LIST_WIDGET,
             self::FILTERS_WIDGET,
+            self::ORDER_VIEW_WIDGET,
         ];
     }
 
@@ -73,6 +75,7 @@ class WidgetConfig implements AvailableWidgets
             self::CHECKOUT_WIDGET => \Haus\StorefrontElementorBridge\Widgets\Checkout::class,
             self::PRODUCT_LIST_WIDGET => \Haus\StorefrontElementorBridge\Widgets\ProductList::class,
             self::FILTERS_WIDGET => \Haus\StorefrontElementorBridge\Widgets\Filters::class,
+            self::ORDER_VIEW_WIDGET => \Haus\StorefrontElementorBridge\Widgets\OrderView::class,
         ];
     }
 }
