@@ -11,6 +11,7 @@ interface AvailableWidgets
     const LOGIN_WIDGET = 'login-widget';
     const RESET_PASSWORD_WIDGET = 'reset-password-widget';
     const CHECKOUT_WIDGET = 'checkout-widget';
+    const ORDER_VIEW_WIDGET = 'order-view-widget';
 
 }
 
@@ -32,6 +33,7 @@ class WidgetConfig implements AvailableWidgets
             self::LOGIN_WIDGET => false,
             self::RESET_PASSWORD_WIDGET => false,
             self::CHECKOUT_WIDGET => false,
+            self::ORDER_VIEW_WIDGET => false,
         ];
 
         // Allow customer to override via WordPress filter
@@ -50,6 +52,7 @@ class WidgetConfig implements AvailableWidgets
             self::LOGIN_WIDGET,
             self::RESET_PASSWORD_WIDGET,
             self::CHECKOUT_WIDGET,
+            self::ORDER_VIEW_WIDGET,
         ];
     }
 
@@ -65,6 +68,7 @@ class WidgetConfig implements AvailableWidgets
             self::LOGIN_WIDGET => \Haus\StorefrontElementorBridge\Widgets\Login::class,
             self::RESET_PASSWORD_WIDGET => \Haus\StorefrontElementorBridge\Widgets\ResetPassword::class,
             self::CHECKOUT_WIDGET => \Haus\StorefrontElementorBridge\Widgets\Checkout::class,
+            self::ORDER_VIEW_WIDGET => \Haus\StorefrontElementorBridge\Widgets\OrderView::class,
         ];
     }
 }
