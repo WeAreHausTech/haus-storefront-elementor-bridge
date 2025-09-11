@@ -39,14 +39,15 @@ class OrderView extends Widget_Base
       return;
     }
     $widget_id = 'ecom_' . $this->get_id();
-    echo '<div id="' . $widget_id . '" data-vendure-token="' . VENDURE_TOKEN .'" data-vendure-api-url="' . VENDURE_API_URL .'" class="ecom-components-root" data-widget-type="order-view"></div>';
-    ?>
 
+    ?>
+    <div id="<?= $widget_id ?>" class="ecom-components-root" data-widget-type="order-view">
+    </div>
     <?php
   }
 
   public function get_script_depends(): array
   {
-      return ['order-view'];
+    return ['order-view'];
   }
 }

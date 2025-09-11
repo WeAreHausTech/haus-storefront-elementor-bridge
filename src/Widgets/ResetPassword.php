@@ -38,8 +38,7 @@ class ResetPassword extends \Elementor\Widget_Base
         }
         $widgetId = 'ecom_' . $this->get_id(); ?>
 
-        <div id="<?= $widgetId ?>" class="ecom-components-root" data-vendure-token="<?= VENDURE_TOKEN ?>"
-            data-vendure-api-url="<?= VENDURE_API_URL ?>" data-widget-type="reset-password">
+        <div id="<?= $widgetId ?>" class="ecom-components-root" data-widget-type="reset-password">
         </div>
         <?php
     }

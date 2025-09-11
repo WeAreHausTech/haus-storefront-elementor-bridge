@@ -11,8 +11,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@haus-storefront-react/core": "^0.0.29",
-    "@haus-storefront-react/shared-types": "^0.0.29",
+    "@haus-storefront-react/core": "^0.0.31",
+    "@haus-storefront-react/shared-types": "^0.0.31",
     "@rollup/plugin-terser": "^0.4.4",
     "@tanstack/react-query": "^5.84.1",
     "@types/lodash": "^4.17.20",

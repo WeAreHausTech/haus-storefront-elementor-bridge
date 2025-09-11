@@ -54,7 +54,7 @@ export function getFiltersAttributes(attrs: NamedNodeMap): FiltersAttributes {
     ? rawFilters.map((f) => ({
         facetCode: f.filter_value,
         logicalOperator: f.filter_condition.toLowerCase() as "and" | "or",
-        label: f.filter_label,
+        label: f.filter_label || undefined,
         type: "facet",
       }))
     : [];

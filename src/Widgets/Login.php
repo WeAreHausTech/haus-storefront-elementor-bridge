@@ -37,8 +37,7 @@ class Login extends \Elementor\Widget_Base
     }
     $widget_id = 'ecom_' . $this->get_id();
     ?>
-    <div id="<?= $widget_id ?>" class="ecom-components-root" data-vendure-api-url="<?= VENDURE_API_URL ?>"
-      data-vendure-token="<?= VENDURE_TOKEN ?>" data-widget-type="login">
+    <div id="<?= $widget_id ?>" class="ecom-components-root" data-widget-type="login">
     </div>
     <?php
   }

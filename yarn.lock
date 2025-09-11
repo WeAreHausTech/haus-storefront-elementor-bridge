@@ -637,47 +637,47 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/common-hooks@npm:0.0.28":
-  version: 0.0.28
-  resolution: "@haus-storefront-react/common-hooks@npm:0.0.28"
+"@haus-storefront-react/common-hooks@npm:0.0.31":
+  version: 0.0.31
+  resolution: "@haus-storefront-react/common-hooks@npm:0.0.31"
   dependencies:
-    "@haus-storefront-react/common-utils": "npm:0.0.28"
+    "@haus-storefront-react/common-utils": "npm:0.0.31"
     i18next: "npm:^24.2.3"
     react-i18next: "npm:^15.7.2"
-  checksum: 10c0/603b1f0770956d557f1b793ebb1fc2310697d52cfac19bc3da4e99de3223cfe8c9f20d0cfc3b56e57be9490bba6f705dc20b5bb41e33f7446b1b3584d752bf02
+  checksum: 10c0/6119bd1a95a7c2070a1be3308627718f8265a82169fe175cec2a932f9599b51b134e6490dcd8f9bfe3be95a6d802e3de21d05ee274564b280d3c1bdfaea6556f
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/common-utils@npm:0.0.28":
-  version: 0.0.28
-  resolution: "@haus-storefront-react/common-utils@npm:0.0.28"
+"@haus-storefront-react/common-utils@npm:0.0.31":
+  version: 0.0.31
+  resolution: "@haus-storefront-react/common-utils@npm:0.0.31"
   dependencies:
-    "@haus-storefront-react/shared-types": "npm:0.0.28"
+    "@haus-storefront-react/shared-types": "npm:0.0.31"
     i18next: "npm:^24.2.3"
     react-i18next: "npm:^15.7.2"
-  checksum: 10c0/1ea20c741fdaf7b239f2bcb9ba44eef3c219beae5b388e688aa910d95fdb3d24e05552e4088ad1604c5fdb4e9544ec150ecf563af33b89f448d1ca288f415712
+  checksum: 10c0/2ab3f7cfcdf46cf9b31062ce5f5b0afa8b4dba58c24f097833d2b46790576186c1be0aca1e67035a327b98c92bc63e053cbb038ad9fd9c981489ffdb5bb1d847
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/core@npm:^0.0.28":
-  version: 0.0.28
-  resolution: "@haus-storefront-react/core@npm:0.0.28"
+"@haus-storefront-react/core@npm:^0.0.31":
+  version: 0.0.31
+  resolution: "@haus-storefront-react/core@npm:0.0.31"
   dependencies:
-    "@haus-storefront-react/common-hooks": "npm:0.0.28"
-    "@haus-storefront-react/common-utils": "npm:0.0.28"
-    "@haus-storefront-react/shared-types": "npm:0.0.28"
+    "@haus-storefront-react/common-hooks": "npm:0.0.31"
+    "@haus-storefront-react/common-utils": "npm:0.0.31"
+    "@haus-storefront-react/shared-types": "npm:0.0.31"
     "@react-native-async-storage/async-storage": "npm:^2.2.0"
     i18next: "npm:^24.2.3"
     react-i18next: "npm:^15.7.2"
     react-native-mmkv-storage: "npm:^0.11.2"
-  checksum: 10c0/c8971a0aff0b245081eec565c8a27a10946b1e2019f0637d517913a2182adaa7aa5cec13264c736ad769dd9d3ba055418d0df01cabc1d1d0307e946633eff0b8
+  checksum: 10c0/76bc003b4e8dbe146d589420b7467b8ae919a43b6bb02d181b2f386c47ff47e2737c7d8bc6769d9cf2d8aa3cd6de6fc37d53784c6b01b89f4ab75bb1b12743c7
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/shared-types@npm:0.0.28, @haus-storefront-react/shared-types@npm:^0.0.28":
-  version: 0.0.28
-  resolution: "@haus-storefront-react/shared-types@npm:0.0.28"
-  checksum: 10c0/ec262336e1b1fdc46d049315f6669ab26fa854b9ce353243c3e825804dc0536d1e85e812fbac97b17bfaed0539060a86c3482dcbc24519aff1bc353796f79e1b
+"@haus-storefront-react/shared-types@npm:0.0.31, @haus-storefront-react/shared-types@npm:^0.0.31":
+  version: 0.0.31
+  resolution: "@haus-storefront-react/shared-types@npm:0.0.31"
+  checksum: 10c0/62e71aa8cd3a937eb9fff67881889c5da399e29b13bbadebfdefc6abb1fc0f195f14587d0e245cd5958aaf96111f55290ff5d40322f7c6eb1ad904893b8f6140
   languageName: node
   linkType: hard
 
@@ -2572,8 +2572,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "haus-storefront-elementor-bridge@workspace:."
   dependencies:
-    "@haus-storefront-react/core": "npm:^0.0.28"
-    "@haus-storefront-react/shared-types": "npm:^0.0.28"
+    "@haus-storefront-react/core": "npm:^0.0.31"
+    "@haus-storefront-react/shared-types": "npm:^0.0.31"
     "@rollup/plugin-node-resolve": "npm:^15.0.0"
     "@rollup/plugin-terser": "npm:^0.4.4"
     "@tanstack/react-query": "npm:^5.84.1"
