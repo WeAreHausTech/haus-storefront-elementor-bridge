@@ -15,6 +15,7 @@ interface AvailableWidgets
     const ORDER_VIEW_WIDGET = 'order-view-widget';
     const FILTERS_WIDGET = 'filters-widget';
     const RELATED_PRODUCTS_WIDGET = 'related-products-widget';
+    const CART_ICON_WIDGET = 'cart-icon-widget';
 }
 
 /**
@@ -39,6 +40,7 @@ class WidgetConfig implements AvailableWidgets
             self::FILTERS_WIDGET => false,
             self::ORDER_VIEW_WIDGET => false,
             self::RELATED_PRODUCTS_WIDGET => false,
+            self::CART_ICON_WIDGET => false,
         ];
 
         // Allow customer to override via WordPress filter
@@ -61,6 +63,7 @@ class WidgetConfig implements AvailableWidgets
             self::FILTERS_WIDGET,
             self::ORDER_VIEW_WIDGET,
             self::RELATED_PRODUCTS_WIDGET,
+            self::CART_ICON_WIDGET,
         ];
     }
 
@@ -80,6 +83,7 @@ class WidgetConfig implements AvailableWidgets
             self::FILTERS_WIDGET => \Haus\StorefrontElementorBridge\Widgets\Filters::class,
             self::ORDER_VIEW_WIDGET => \Haus\StorefrontElementorBridge\Widgets\OrderView::class,
             self::RELATED_PRODUCTS_WIDGET => \Haus\StorefrontElementorBridge\Widgets\RelatedProducts::class,
+            self::CART_ICON_WIDGET => \Haus\StorefrontElementorBridge\Widgets\CartIcon::class,
         ];
     }
 }
