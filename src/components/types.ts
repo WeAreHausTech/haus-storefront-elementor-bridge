@@ -13,3 +13,12 @@ export type FiltersAttributes = {
   maxSkeletonLoaders?: number;
   enabledFilters: EnabledFilter[];
 };
+
+export type AccountMenuItem = {
+  href: string;
+  label: string;
+};
+
+export type AccountDropdownAttributes = {
+  menuItems: AccountMenuItem[];
+};
