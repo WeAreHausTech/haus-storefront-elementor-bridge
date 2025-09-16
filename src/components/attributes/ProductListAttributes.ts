@@ -1,6 +1,5 @@
 import type { ProductListAttributes } from "../types";
 import { parseDataAttributes } from "../utilities";
-import { EnabledFilter } from "@haus-storefront-react/shared-types";
 
 export function getProductListAttributes(
   attrs: NamedNodeMap

@@ -1,6 +1,6 @@
 # Haus Storefront Elementor Bridge
 
-A simple WordPress plugin that registers Elementor widgets for haus ecom components
+A composer packaage that registers Elementor widgets for haus ecom components
 
 ## Installation
 
