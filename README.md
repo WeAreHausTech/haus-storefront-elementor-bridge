@@ -21,7 +21,6 @@ This package provides a simple foundation for registering Elementor widgets. It 
 1. WidgetRegistrar – Registers enabled widgets under the `haus-ecom` Elementor category
 2. Widgets – Ready-made Elementor widgets that render Haus Storefront components
 3. Configuration – Centralized widget configuration and enabling via a WordPress filter
-4. Frontend renderer – React renderer and build tooling (Vite) for the widget UIs
 
 ## Enabling widgets
 
