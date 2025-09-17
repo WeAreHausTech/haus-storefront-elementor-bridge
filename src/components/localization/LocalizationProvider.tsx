@@ -5,8 +5,8 @@ import { useState } from 'react'
 import Backend from 'i18next-http-backend'
 import { ChildrenProps } from '@haus-storefront-react/shared-types'
 import { useAsyncEffect } from '@haus-storefront-react/common-hooks/use-async-effect'
-import { renderChildren } from '../../helpers/render-children'
-import { useSdk } from '../hooks/useSdk'
+import { renderChildren } from '@haus-storefront-react/common-utils'
+import { useSdk } from '@haus-storefront-react/core'
 
 export type ResourceBundle = {
   lng: string
