@@ -4,19 +4,6 @@ import type { DataProviderProps } from "@haus-storefront-react/core";
 import { DataProvider } from "@haus-storefront-react/core";
 import { GlobalEventProvider } from "./event-listeners/event-provider";
 
-export type ConditionalTemplateProps = {
-  conditions: {
-    [key: string]: {
-      inputType:
-        | "productVariant"
-        | "product"
-        | "activeOrder"
-        | "activeCustomer"; // Add more input types as needed (e.g. 'product', 'cart', etc.)
-      fn: (input: never) => boolean;
-    };
-  };
-};
-
 type GenericProps = PropsWithChildren<{
   [key: string]: any;
 }>;
