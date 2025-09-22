@@ -2,6 +2,7 @@ import React, { JSX, PropsWithChildren } from "react";
 import ReactDOM from "react-dom/client";
 import type { DataProviderProps } from "@haus-storefront-react/core";
 import { DataProvider } from "@haus-storefront-react/core";
+import { GlobalEventProvider } from "./event-listeners/event-provider";
 
 type GenericProps = PropsWithChildren<{
   [key: string]: any;
@@ -224,7 +225,7 @@ export class ElementorWidgetRenderer {
       return ReactDOM.createRoot(shadowRoot).render(
         <React.StrictMode>
           <DataProvider {...(this.dataProviderProps as DataProviderProps)}>
-            {widgetWithProps}
+            <GlobalEventProvider>{widgetWithProps}</GlobalEventProvider>
           </DataProvider>
         </React.StrictMode>
       );

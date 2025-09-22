@@ -8,3 +8,12 @@ export {
   ConditionalTemplate,
   type CustomTemplateProps,
 } from "./components/ConditionalTemplate";
+export {
+  GlobalEventProvider,
+  useEventListenerManager,
+  type CustomEventListeners,
+} from "./event-listeners/event-provider";
+export {
+  DEFAULT_EVENTS,
+  type EventConfig,
+} from "./event-listeners/default-event-listerners";

@@ -72,3 +72,76 @@ Common `data-*` attributes parsed by helpers (converted to camelCase internally)
 - Product List: `data-product-list-identifier`, `data-facet` (comma-separated or JSON), `data-collection`, `data-pagination-enabled`, `data-take`
 - Filters: `data-product-list-identifier`, `data-price-filter-enabled`, `data-max-skeleton-loaders`, `data-filter-values` (JSON or array)
 - Account Dropdown: `data-menu-items` (JSON)
+
+## Event Listener System
+
+The bridge includes a flexible event listener system that allows customers to customize event handling.
+
+### Default Event Listeners
+
+The bridge provides default event listeners
+
+### Custom Event Listeners
+
+Customer repos can provide custom event listeners through the `window.CUSTOM_EVENT_LISTENERS` global:
+
+```typescript
+// In customer repo
+import { orderLineChannel, checkoutChannel } from "@haus-storefront-react/core";
+import { Order } from "@haus-storefront-react/shared-types";
+
+const customEventListeners = [
+  {
+    event: "orderline:added",
+    channel: orderLineChannel,
+    handler: (payload: OrderLinePayload) => {
+      gtag("event", "add_to_cart", {
+        currency: payload.currencyCode,
+        value: payload.unitPriceWithTax,
+        items: [
+          {
+            item_id: payload.productVariant.id,
+            item_name: payload.productVariant.name,
+            quantity: payload.quantity,
+            price: payload.unitPriceWithTax,
+          },
+        ],
+      });
+    },
+  },
+  {
+    event: "checkout:start",
+    channel: checkoutChannel,
+    handler: (order: Order) => {
+      gtag("event", "begin_checkout", {
+        currency: order.currencyCode,
+        value: order.totalWithTax,
+      });
+    },
+  },
+];
+
+// Make the config available to the bridge
+window.CUSTOM_EVENT_LISTENERS = customEventListeners;
+```
+
+### Event Configuration
+
+Each event listener is configured with:
+
+```typescript
+type EventConfig = {
+  event: string; // Event name (e.g., "orderline:added")
+  channel: any; // Event bus channel from @haus-storefront-react/core
+  handler: (...args: any[]) => void; // Your custom handler function
+};
+```
+
+### How It Works
+
+- If you provide `window.CUSTOM_EVENT_LISTENERS`, it automatically overrides ALL default events
+- Your custom events replace the defaults for the same events
+- You can add additional events that don't exist in defaults
+- If no custom events are provided, only the bridge defaults run
+
+This system provides a clean, type-safe way to customize event handling while maintaining the bridge's default functionality as a fallback.

@@ -380,58 +380,67 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/common-hooks@npm:0.0.32-3":
-  version: 0.0.32-3
-  resolution: "@haus-storefront-react/common-hooks@npm:0.0.32-3"
+"@haus-storefront-react/common-hooks@npm:0.0.32-5":
+  version: 0.0.32-5
+  resolution: "@haus-storefront-react/common-hooks@npm:0.0.32-5"
   dependencies:
-    "@haus-storefront-react/common-utils": "npm:0.0.32-3"
+    "@haus-storefront-react/common-utils": "npm:0.0.32-5"
     i18next: "npm:^24.2.3"
     react-i18next: "npm:^15.7.2"
-  checksum: 10c0/047e266385df6a28966f92cae8929939806b048fd91bc528624a83d29112dcbe9f6ba1deab4a407dca2a20a72efad90fa1154b7129cbac91985647ed87dd73c4
+  checksum: 10c0/7922fb5c50f9eeb08578d05d1598c30a69dfb2157ada7b25bd0d74bff08b9b314bf7e66c85488d1681db330ce54e275fb58c5abb6016291339392e570d91eaf8
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/common-utils@npm:0.0.32-3":
-  version: 0.0.32-3
-  resolution: "@haus-storefront-react/common-utils@npm:0.0.32-3"
+"@haus-storefront-react/common-utils@npm:0.0.32-5":
+  version: 0.0.32-5
+  resolution: "@haus-storefront-react/common-utils@npm:0.0.32-5"
   dependencies:
-    "@haus-storefront-react/shared-types": "npm:0.0.32-3"
+    "@haus-storefront-react/shared-types": "npm:0.0.32-5"
     i18next: "npm:^24.2.3"
     react-i18next: "npm:^15.7.2"
-  checksum: 10c0/6dde15593b7a76bc45ad905fa5c6fc5d1818aa4765d81f4a376097c996b5ad1936c0ee6f479e04a9b48fe032807d2e9681f5b0ce5825a9658e4ee7b5546ec984
+  checksum: 10c0/58791a3a705a5e8b20bcbe69968563ddad537ede9817127c37c137ec52b15a4e5939f4222646d2cd8e303d64fda3413cd502a1d886ac2e09ce3f6d270c689ef0
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/core@npm:0.0.32-3, @haus-storefront-react/core@npm:^0.0.32-3":
-  version: 0.0.32-3
-  resolution: "@haus-storefront-react/core@npm:0.0.32-3"
+"@haus-storefront-react/core@npm:0.0.32-5, @haus-storefront-react/core@npm:^0.0.32-3":
+  version: 0.0.32-5
+  resolution: "@haus-storefront-react/core@npm:0.0.32-5"
   dependencies:
-    "@haus-storefront-react/common-hooks": "npm:0.0.32-3"
-    "@haus-storefront-react/common-utils": "npm:0.0.32-3"
-    "@haus-storefront-react/shared-types": "npm:0.0.32-3"
+    "@haus-storefront-react/common-hooks": "npm:0.0.32-5"
+    "@haus-storefront-react/common-utils": "npm:0.0.32-5"
+    "@haus-storefront-react/shared-types": "npm:0.0.32-5"
     i18next: "npm:^24.2.3"
     react-i18next: "npm:^15.7.2"
-  checksum: 10c0/90a56cff78439c0bfe8e49f935d7b6c82c760941320ec440bf5f6100287b806a725064ec1f3d5bd71a7e7c2a9260673cdcc99bedaed2321e1681aff87adcb034
+  checksum: 10c0/7136748ad3bd04c6844e5ea2c45af2e8e3289f2dc3b9c9634f35e69ff2e8be27394363b9f266a3881c22b4ea781c29621d4006e35eae36c4f0c01873164e8276
   languageName: node
   linkType: hard
 
 "@haus-storefront-react/hooks@npm:^0.0.32-3":
-  version: 0.0.32-3
-  resolution: "@haus-storefront-react/hooks@npm:0.0.32-3"
+  version: 0.0.32-5
+  resolution: "@haus-storefront-react/hooks@npm:0.0.32-5"
   dependencies:
-    "@haus-storefront-react/common-utils": "npm:0.0.32-3"
-    "@haus-storefront-react/core": "npm:0.0.32-3"
-    "@haus-storefront-react/shared-types": "npm:0.0.32-3"
+    "@haus-storefront-react/common-utils": "npm:0.0.32-5"
+    "@haus-storefront-react/core": "npm:0.0.32-5"
+    "@haus-storefront-react/shared-types": "npm:0.0.32-5"
     i18next: "npm:^24.2.3"
     react-i18next: "npm:^15.7.2"
-  checksum: 10c0/c81f790bf03787aeff27ccdd4c04431ca919ef124ed05e64a97ee010a70d313dcf43f967f048eef49b6cc26f9effe0138ffcd6403d35fa54908d99e088136154
+  checksum: 10c0/a56947a5059cbf0505ad508197c6405fd13919fb54c8237f7509bb858912325c26d4e3242a8ae4fdd9a0c8b2872654c89e4ec3627848a4d7d396863a0381d594
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/shared-types@npm:0.0.32-3, @haus-storefront-react/shared-types@npm:^0.0.32-3":
-  version: 0.0.32-3
-  resolution: "@haus-storefront-react/shared-types@npm:0.0.32-3"
-  checksum: 10c0/cf1f59ab4dec13dcfda10927a215b13bacb2b8d325e7af1feff6e70d7aba3329e315d2222c1ecef0a99e537f28013afef2824c622bc816a15b469e96611c2bef
+"@haus-storefront-react/shared-types@npm:0.0.32-5, @haus-storefront-react/shared-types@npm:^0.0.32-3":
+  version: 0.0.32-5
+  resolution: "@haus-storefront-react/shared-types@npm:0.0.32-5"
+  checksum: 10c0/fd2450518f5964cfdc15c29f03f86523b0f62085050fe7f6e49b94d24bb35d4cc7c0e85b2340dfaf6319ac80256fa00c51311f89ac8b062c24d311f0ff35eadf
+  languageName: node
+  linkType: hard
+
+"@haus-tech/prettier-config@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@haus-tech/prettier-config@npm:1.0.3"
+  peerDependencies:
+    prettier: ^3.0.2
+  checksum: 10c0/39b058d2f8aed963473d41a73d977b06cbdaa6b3885eb38989e1555ddabadaac0f7ce4b0f135883696ced0a6a46a9e5283178e574d00626ea57afa21126a25ae
   languageName: node
   linkType: hard
 
@@ -1290,6 +1299,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-prettier@npm:^10.1.8":
+  version: 10.1.8
+  resolution: "eslint-config-prettier@npm:10.1.8"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  bin:
+    eslint-config-prettier: bin/cli.js
+  checksum: 10c0/e1bcfadc9eccd526c240056b1e59c5cd26544fe59feb85f38f4f1f116caed96aea0b3b87868e68b3099e55caaac3f2e5b9f58110f85db893e83a332751192682
+  languageName: node
+  linkType: hard
+
 "estree-walker@npm:^2.0.2":
   version: 2.0.2
   resolution: "estree-walker@npm:2.0.2"
@@ -1439,6 +1459,7 @@ __metadata:
     "@haus-storefront-react/core": "npm:^0.0.32-3"
     "@haus-storefront-react/hooks": "npm:^0.0.32-3"
     "@haus-storefront-react/shared-types": "npm:^0.0.32-3"
+    "@haus-tech/prettier-config": "npm:^1.0.3"
     "@rollup/plugin-node-resolve": "npm:^15.0.0"
     "@rollup/plugin-terser": "npm:^0.4.4"
     "@tanstack/react-query": "npm:^5.84.1"
@@ -1446,8 +1467,10 @@ __metadata:
     "@types/react": "npm:^19.0.0"
     "@types/react-dom": "npm:^19.0.0"
     "@vitejs/plugin-react": "npm:^4.0.0"
+    eslint-config-prettier: "npm:^10.1.8"
     lodash: "npm:^4.17.21"
     path: "npm:^0.12.7"
+    prettier: "npm:^3.6.2"
     react: "npm:19.1.1"
     react-dom: "npm:19.1.1"
     react-i18next: "npm:15.7.1"
@@ -1983,6 +2006,15 @@ __metadata:
     picocolors: "npm:^1.1.1"
     source-map-js: "npm:^1.2.1"
   checksum: 10c0/5127cc7c91ed7a133a1b7318012d8bfa112da9ef092dddf369ae699a1f10ebbd89b1b9f25f3228795b84585c72aabd5ced5fc11f2ba467eedf7b081a66fad024
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.6.2":
+  version: 3.6.2
+  resolution: "prettier@npm:3.6.2"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/488cb2f2b99ec13da1e50074912870217c11edaddedeadc649b1244c749d15ba94e846423d062e2c4c9ae683e2d65f754de28889ba06e697ac4f988d44f45812
   languageName: node
   linkType: hard
 
