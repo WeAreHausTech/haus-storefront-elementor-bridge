@@ -1,39 +1,39 @@
 {
-  "name": "haus-storefront-elementor-bridge",
-  "version": "1.0.0",
-  "description": "Elementor bridge for Haus storefront components",
-  "main": "dist/host.js",
-  "type": "module",
-  "scripts": {
-    "build": "vite build --config vite.config-build.ts",
-    "dev": "vite",
-    "preview": "vite preview",
-    "type-check": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@haus-storefront-react/core": "^0.0.32-3",
-    "@haus-storefront-react/hooks": "^0.0.32-3",
-    "@haus-storefront-react/shared-types": "^0.0.32-3",
-    "@haus-tech/prettier-config": "^1.0.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@tanstack/react-query": "^5.84.1",
-    "@types/lodash": "^4.17.20",
-    "eslint-config-prettier": "^10.1.8",
-    "lodash": "^4.17.21",
-    "path": "^0.12.7",
-    "prettier": "^3.6.2",
-    "react": "19.1.1",
-    "react-dom": "19.1.1",
-    "react-i18next": "15.7.1"
-  },
-  "devDependencies": {
-    "@rollup/plugin-node-resolve": "^15.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "@vitejs/plugin-react": "^4.0.0",
-    "typescript": "^5.0.0",
-    "vite": "^4.4.0",
-    "vite-plugin-dts": "^3.0.0"
-  },
-  "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
+    "name": "haus-storefront-elementor-bridge",
+    "version": "1.0.0",
+    "description": "Elementor bridge for Haus storefront components",
+    "main": "dist/host.js",
+    "type": "module",
+    "scripts": {
+        "build": "vite build --config vite.config-build.ts",
+        "dev": "vite",
+        "preview": "vite preview",
+        "type-check": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@haus-storefront-react/core": "^0.0.41",
+        "@haus-storefront-react/hooks": "^0.0.41",
+        "@haus-storefront-react/shared-types": "^0.0.41",
+        "@haus-tech/prettier-config": "^1.0.3",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@tanstack/react-query": "^5.90.2",
+        "@types/lodash": "^4.17.20",
+        "eslint-config-prettier": "^10.1.8",
+        "lodash": "^4.17.21",
+        "path": "^0.12.7",
+        "prettier": "^3.6.2",
+        "react": "19.1.1",
+        "react-dom": "19.1.1",
+        "react-i18next": "15.7.4"
+    },
+    "devDependencies": {
+        "@rollup/plugin-node-resolve": "^15.3.1",
+        "@types/react": "^19.1.13",
+        "@types/react-dom": "^19.1.9",
+        "@vitejs/plugin-react": "^4.7.0",
+        "typescript": "^5.9.2",
+        "vite": "^4.5.14",
+        "vite-plugin-dts": "^3.9.1"
+    },
+    "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
 }

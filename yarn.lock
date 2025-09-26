@@ -183,7 +183,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.26.10, @babel/runtime@npm:^7.27.6":
+"@babel/runtime@npm:^7.27.6":
   version: 7.28.2
   resolution: "@babel/runtime@npm:7.28.2"
   checksum: 10c0/c20afe253629d53a405a610b12a62ac74d341a2c1e0fb202bbef0c118f6b5c84f94bf16039f58fd0483dd256901259930a43976845bdeb180cab1f882c21b6e0
@@ -380,58 +380,50 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/common-hooks@npm:0.0.32-5":
-  version: 0.0.32-5
-  resolution: "@haus-storefront-react/common-hooks@npm:0.0.32-5"
+"@haus-storefront-react/common-hooks@npm:0.0.41":
+  version: 0.0.41
+  resolution: "@haus-storefront-react/common-hooks@npm:0.0.41"
   dependencies:
-    "@haus-storefront-react/common-utils": "npm:0.0.32-5"
-    i18next: "npm:^24.2.3"
-    react-i18next: "npm:^15.7.2"
-  checksum: 10c0/7922fb5c50f9eeb08578d05d1598c30a69dfb2157ada7b25bd0d74bff08b9b314bf7e66c85488d1681db330ce54e275fb58c5abb6016291339392e570d91eaf8
+    "@haus-storefront-react/common-utils": "npm:0.0.41"
+  checksum: 10c0/4ca48f774b4d3786c2c914abafeafbb156f1c20570b7fd72fe6c28308defcf8f9edb957716290175109f6c7855d35c7d0056cc5480e48755fea3a80f1bf6091d
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/common-utils@npm:0.0.32-5":
-  version: 0.0.32-5
-  resolution: "@haus-storefront-react/common-utils@npm:0.0.32-5"
+"@haus-storefront-react/common-utils@npm:0.0.41":
+  version: 0.0.41
+  resolution: "@haus-storefront-react/common-utils@npm:0.0.41"
   dependencies:
-    "@haus-storefront-react/shared-types": "npm:0.0.32-5"
-    i18next: "npm:^24.2.3"
-    react-i18next: "npm:^15.7.2"
-  checksum: 10c0/58791a3a705a5e8b20bcbe69968563ddad537ede9817127c37c137ec52b15a4e5939f4222646d2cd8e303d64fda3413cd502a1d886ac2e09ce3f6d270c689ef0
+    "@haus-storefront-react/shared-types": "npm:0.0.41"
+  checksum: 10c0/1fc06cff060b3abb127356abe8f25d58a26396a6fda28e44ccb3980bb279f1853a64759d14fe78e08666930120be109efaa113c819cb7badf28a5afd2156a75c
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/core@npm:0.0.32-5, @haus-storefront-react/core@npm:^0.0.32-3":
-  version: 0.0.32-5
-  resolution: "@haus-storefront-react/core@npm:0.0.32-5"
+"@haus-storefront-react/core@npm:0.0.41, @haus-storefront-react/core@npm:^0.0.41":
+  version: 0.0.41
+  resolution: "@haus-storefront-react/core@npm:0.0.41"
   dependencies:
-    "@haus-storefront-react/common-hooks": "npm:0.0.32-5"
-    "@haus-storefront-react/common-utils": "npm:0.0.32-5"
-    "@haus-storefront-react/shared-types": "npm:0.0.32-5"
-    i18next: "npm:^24.2.3"
-    react-i18next: "npm:^15.7.2"
-  checksum: 10c0/7136748ad3bd04c6844e5ea2c45af2e8e3289f2dc3b9c9634f35e69ff2e8be27394363b9f266a3881c22b4ea781c29621d4006e35eae36c4f0c01873164e8276
+    "@haus-storefront-react/common-hooks": "npm:0.0.41"
+    "@haus-storefront-react/common-utils": "npm:0.0.41"
+    "@haus-storefront-react/shared-types": "npm:0.0.41"
+  checksum: 10c0/af550a9194b6ca43e873d13bc7ed269816347cebb6c0cb7b11b65ed7df202606cec743406e89b7c4a193f0dfd758136978e5d625ca406125790fade7dfbd9bb1
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/hooks@npm:^0.0.32-3":
-  version: 0.0.32-5
-  resolution: "@haus-storefront-react/hooks@npm:0.0.32-5"
+"@haus-storefront-react/hooks@npm:^0.0.41":
+  version: 0.0.41
+  resolution: "@haus-storefront-react/hooks@npm:0.0.41"
   dependencies:
-    "@haus-storefront-react/common-utils": "npm:0.0.32-5"
-    "@haus-storefront-react/core": "npm:0.0.32-5"
-    "@haus-storefront-react/shared-types": "npm:0.0.32-5"
-    i18next: "npm:^24.2.3"
-    react-i18next: "npm:^15.7.2"
-  checksum: 10c0/a56947a5059cbf0505ad508197c6405fd13919fb54c8237f7509bb858912325c26d4e3242a8ae4fdd9a0c8b2872654c89e4ec3627848a4d7d396863a0381d594
+    "@haus-storefront-react/common-utils": "npm:0.0.41"
+    "@haus-storefront-react/core": "npm:0.0.41"
+    "@haus-storefront-react/shared-types": "npm:0.0.41"
+  checksum: 10c0/49f87df35b9bd73d01d62987d780070bdf14b50da6705f3fa4229db3061a9b41035a6122937ea7bfb29aef2214fc672b75b0e161ee2184fee2c8aa4abed39631
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/shared-types@npm:0.0.32-5, @haus-storefront-react/shared-types@npm:^0.0.32-3":
-  version: 0.0.32-5
-  resolution: "@haus-storefront-react/shared-types@npm:0.0.32-5"
-  checksum: 10c0/fd2450518f5964cfdc15c29f03f86523b0f62085050fe7f6e49b94d24bb35d4cc7c0e85b2340dfaf6319ac80256fa00c51311f89ac8b062c24d311f0ff35eadf
+"@haus-storefront-react/shared-types@npm:0.0.41, @haus-storefront-react/shared-types@npm:^0.0.41":
+  version: 0.0.41
+  resolution: "@haus-storefront-react/shared-types@npm:0.0.41"
+  checksum: 10c0/a2f63279d3abc1edc9fa500ddfe681a5d05ff4ef95ceb8a566b1e63fafaba1c049a7d147db3e9cdf65a2b6366abeb38fa0766648bbba48d075a2827f9cc2e1f7
   languageName: node
   linkType: hard
 
@@ -600,7 +592,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-node-resolve@npm:^15.0.0":
+"@rollup/plugin-node-resolve@npm:^15.3.1":
   version: 15.3.1
   resolution: "@rollup/plugin-node-resolve@npm:15.3.1"
   dependencies:
@@ -706,21 +698,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:5.83.1":
-  version: 5.83.1
-  resolution: "@tanstack/query-core@npm:5.83.1"
-  checksum: 10c0/3eeacf678fcf9803585f1be74979548a33c7f659b8d5f33c1e3b3834ef3b9f3401070b2e2d38bbaa9c6e5a3c359baaa3828078e38007b7c99fb8c9f1e3911142
+"@tanstack/query-core@npm:5.90.2":
+  version: 5.90.2
+  resolution: "@tanstack/query-core@npm:5.90.2"
+  checksum: 10c0/695a7450b0bb9f6dd21bebeacfc962dfc886631a3b3a13c33a842ef719b4c3dd30c15febe8c1ade6902a85e0f387c51a97570f430cc8f5c7032ff737d6410597
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.84.1":
-  version: 5.84.1
-  resolution: "@tanstack/react-query@npm:5.84.1"
+"@tanstack/react-query@npm:^5.90.2":
+  version: 5.90.2
+  resolution: "@tanstack/react-query@npm:5.90.2"
   dependencies:
-    "@tanstack/query-core": "npm:5.83.1"
+    "@tanstack/query-core": "npm:5.90.2"
   peerDependencies:
     react: ^18 || ^19
-  checksum: 10c0/a57fed2e6f3c7a42309383e03056f1ff1506ad5fdc8d20a1a6a945006442e71871dfd5eac6e90fb8a506036b2e8a2a5463fa0f5bed826de170aa5926a4728f99
+  checksum: 10c0/22e76626a59890409858521b0e42b49219126a4ea5ed79eaa48a267959175dfdd28b30b9b03a415dccf703d95c18100a9d8917679818f6d2adc26d6c5f96a4d6
   languageName: node
   linkType: hard
 
@@ -786,7 +778,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^19.0.0":
+"@types/react-dom@npm:^19.1.9":
   version: 19.1.9
   resolution: "@types/react-dom@npm:19.1.9"
   peerDependencies:
@@ -795,12 +787,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.0.0":
-  version: 19.1.12
-  resolution: "@types/react@npm:19.1.12"
+"@types/react@npm:^19.1.13":
+  version: 19.1.13
+  resolution: "@types/react@npm:19.1.13"
   dependencies:
     csstype: "npm:^3.0.2"
-  checksum: 10c0/e35912b43da0caaab5252444bab87a31ca22950cde2822b3b3dc32e39c2d42dad1a4cf7b5dde9783aa2d007f0b2cba6ab9563fc6d2dbcaaa833b35178118767c
+  checksum: 10c0/75e35b54883f5ed07d3b5cb16a4711b6dbb7ec6b74301bcb9bfa697c9d9fff022ec508e1719e7b2c69e2e8b042faac1125be7717b5e5e084f816a2c88e136920
   languageName: node
   linkType: hard
 
@@ -811,7 +803,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-react@npm:^4.0.0":
+"@vitejs/plugin-react@npm:^4.7.0":
   version: 4.7.0
   resolution: "@vitejs/plugin-react@npm:4.7.0"
   dependencies:
@@ -1456,27 +1448,27 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "haus-storefront-elementor-bridge@workspace:."
   dependencies:
-    "@haus-storefront-react/core": "npm:^0.0.32-3"
-    "@haus-storefront-react/hooks": "npm:^0.0.32-3"
-    "@haus-storefront-react/shared-types": "npm:^0.0.32-3"
+    "@haus-storefront-react/core": "npm:^0.0.41"
+    "@haus-storefront-react/hooks": "npm:^0.0.41"
+    "@haus-storefront-react/shared-types": "npm:^0.0.41"
     "@haus-tech/prettier-config": "npm:^1.0.3"
-    "@rollup/plugin-node-resolve": "npm:^15.0.0"
+    "@rollup/plugin-node-resolve": "npm:^15.3.1"
     "@rollup/plugin-terser": "npm:^0.4.4"
-    "@tanstack/react-query": "npm:^5.84.1"
+    "@tanstack/react-query": "npm:^5.90.2"
     "@types/lodash": "npm:^4.17.20"
-    "@types/react": "npm:^19.0.0"
-    "@types/react-dom": "npm:^19.0.0"
-    "@vitejs/plugin-react": "npm:^4.0.0"
+    "@types/react": "npm:^19.1.13"
+    "@types/react-dom": "npm:^19.1.9"
+    "@vitejs/plugin-react": "npm:^4.7.0"
     eslint-config-prettier: "npm:^10.1.8"
     lodash: "npm:^4.17.21"
     path: "npm:^0.12.7"
     prettier: "npm:^3.6.2"
     react: "npm:19.1.1"
     react-dom: "npm:19.1.1"
-    react-i18next: "npm:15.7.1"
-    typescript: "npm:^5.0.0"
-    vite: "npm:^4.4.0"
-    vite-plugin-dts: "npm:^3.0.0"
+    react-i18next: "npm:15.7.4"
+    typescript: "npm:^5.9.2"
+    vite: "npm:^4.5.14"
+    vite-plugin-dts: "npm:^3.9.1"
   languageName: unknown
   linkType: soft
 
@@ -1522,20 +1514,6 @@ __metadata:
     agent-base: "npm:^7.1.2"
     debug: "npm:4"
   checksum: 10c0/f729219bc735edb621fa30e6e84e60ee5d00802b8247aac0d7b79b0bd6d4b3294737a337b93b86a0bd9e68099d031858a39260c976dc14cdbba238ba1f8779ac
-  languageName: node
-  linkType: hard
-
-"i18next@npm:^24.2.3":
-  version: 24.2.3
-  resolution: "i18next@npm:24.2.3"
-  dependencies:
-    "@babel/runtime": "npm:^7.26.10"
-  peerDependencies:
-    typescript: ^5
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 10c0/7ac11a67d618ec714beef303aa497c1249bf5f1977dd3ebe9ca2673dfa6cadbba9e2d39ec1337688903ae3866ce9c1bc22cd6b265e66cce54c5db3a9bbedd390
   languageName: node
   linkType: hard
 
@@ -2069,9 +2047,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:15.7.1":
-  version: 15.7.1
-  resolution: "react-i18next@npm:15.7.1"
+"react-i18next@npm:15.7.4":
+  version: 15.7.4
+  resolution: "react-i18next@npm:15.7.4"
   dependencies:
     "@babel/runtime": "npm:^7.27.6"
     html-parse-stringify: "npm:^3.0.1"
@@ -2086,28 +2064,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 10c0/1f454e0e388af8879fa2cb76a7ddd849d3e68692aeb1786ef26e2a9419c0e0a943ab88c850b8e83bb346614101f11567f13a50f5171bf3cada587f0f6a7da4d8
-  languageName: node
-  linkType: hard
-
-"react-i18next@npm:^15.7.2":
-  version: 15.7.3
-  resolution: "react-i18next@npm:15.7.3"
-  dependencies:
-    "@babel/runtime": "npm:^7.27.6"
-    html-parse-stringify: "npm:^3.0.1"
-  peerDependencies:
-    i18next: ">= 25.4.1"
-    react: ">= 16.8.0"
-    typescript: ^5
-  peerDependenciesMeta:
-    react-dom:
-      optional: true
-    react-native:
-      optional: true
-    typescript:
-      optional: true
-  checksum: 10c0/dc3ca1da9accb47f63b2049c94ff7a94ba92d76bad586aca7c2aa3b7a01c2d4e69d4363ff0cfa898cef22b109f2dd49864d6ac94cd9afbac485d44e70ed5a4d6
+  checksum: 10c0/643c5d3ced4b44084c871a55e876159561c14f378f90bf53286c1291082703e293573da18ad692b43b357b60d2f7251bc417feb0b522de8cec5c414e5ebdf6c1
   languageName: node
   linkType: hard
 
@@ -2467,7 +2424,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.0.0":
+"typescript@npm:^5.9.2":
   version: 5.9.2
   resolution: "typescript@npm:5.9.2"
   bin:
@@ -2487,7 +2444,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.0.0#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^5.9.2#optional!builtin<compat/typescript>":
   version: 5.9.2
   resolution: "typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>::version=5.9.2&hash=5786d5"
   bin:
@@ -2561,7 +2518,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-dts@npm:^3.0.0":
+"vite-plugin-dts@npm:^3.9.1":
   version: 3.9.1
   resolution: "vite-plugin-dts@npm:3.9.1"
   dependencies:
@@ -2582,7 +2539,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.4.0":
+"vite@npm:^4.5.14":
   version: 4.5.14
   resolution: "vite@npm:4.5.14"
   dependencies:
