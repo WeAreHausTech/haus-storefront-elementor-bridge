@@ -1,0 +1,178 @@
+{
+  "account": {
+    "accountDropdown": {
+      "aria": {},
+      "alt": {}
+    },
+    "addressForm": {
+      "aria": {},
+      "alt": {}
+    },
+    "billingAddress": {
+      "aria": {},
+      "alt": {}
+    },
+    "customerDetails": {
+      "aria": {},
+      "alt": {}
+    },
+    "login": {
+      "aria": {},
+      "alt": {}
+    },
+    "orders": {
+      "aria": {},
+      "alt": {}
+    },
+    "shippingAddress": {
+      "aria": {},
+      "alt": {}
+    }
+  },
+  "addToCartButton": {
+    "aria": {
+      "addButton": "Add",
+      "subtractButton": "Remove",
+      "quantityValue": "Use the up or down arrows to change quantity"
+    },
+    "alt": {}
+  },
+  "cartPrice": {
+    "aria": {},
+    "alt": {}
+  },
+  "checkout": {
+    "aria": {},
+    "alt": {}
+  },
+  "completeOrder": {
+    "aria": {},
+    "alt": {}
+  },
+  "dropdownCart": {
+    "aria": {},
+    "alt": {}
+  },
+  "general": {
+    "aria": {},
+    "alt": {}
+  },
+  "order": {
+    "aria": {},
+    "alt": {}
+  },
+  "orderConfirmation": {
+    "aria": {},
+    "alt": {}
+  },
+  "orderLines": {
+    "aria": {
+      "removeFromCart": "Remove item from cart",
+      "itemRemoved": "Item removed"
+    },
+    "alt": {}
+  },
+  "orderView": {
+    "aria": {},
+    "alt": {}
+  },
+  "pagination": {
+    "aria": {
+      "showing": "Showing {{amount}} of {{totalItems}} products",
+      "showMore": "Show more products on page"
+    },
+    "alt": {}
+  },
+  "productDetail": {
+    "aria": {
+      "addToCart": "Add to cart",
+      "quantityLabel": "{{quantity}} units ({{formattedPrice}})",
+      "chooseNumberOfItems": "Choose number of items"
+    },
+    "alt": {},
+    "aria-live": {
+      "addToCart": "Added {{quantity}} {{productName}} to cart"
+    }
+  },
+  "productVariantOptions": {
+    "aria": {
+      "selectOption": "Select {{optionGroupName}}",
+      "selectedVariant": "Selected variant {{name}}"
+    },
+    "alt": {}
+  },
+  "productList": {
+    "aria": {
+      "linkToProduct": "Link to {{productName}}"
+    },
+    "alt": {}
+  },
+  "searchField": {
+    "aria": {},
+    "alt": {}
+  },
+  "selectAddress": {
+    "aria": {},
+    "alt": {}
+  },
+  "selectCountry": {
+    "aria": {},
+    "alt": {}
+  },
+  "setCustomerForOrder": {
+    "aria": {},
+    "alt": {}
+  },
+  "setOrderAddress": {
+    "aria": {},
+    "alt": {}
+  },
+  "urls": {
+    "aria": {},
+    "alt": {}
+  },
+  "filter": {
+    "aria": {
+      "filterBy": "Filter by {{value}}"
+    },
+    "aria-live": {
+      "allFiltersCleared": "All filters have been removed"
+    },
+    "alt": {}
+  },
+  "sort": {
+    "aria": {},
+    "aria-live": {
+      "sortUpdatedTo": "The sorting order has been updated to {{value}} "
+    },
+    "alt": {}
+  },
+  "facetValueFilter": {
+    "aria": {},
+    "aria-live": {
+      "filterAdded": "{{value}} has been added as filter",
+      "filterRemoved": "The filter {{value}} has been removed"
+    },
+
+    "alt": {}
+  },
+  "priceFilter": {
+    "aria": {
+      "filterBy": "Filter by price"
+    },
+    "alt": {}
+  },
+  "rangeSlider": {
+    "aria": {
+      "minValue": "Enter the lowest value",
+      "maxValue": "Enter the highest value"
+    },
+    "alt": {}
+  },
+  "imageCarousel": {
+    "aria": {
+      "label": "Image carousel"
+    },
+    "alt": {}
+  }
+}
