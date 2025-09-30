@@ -5,8 +5,6 @@ declare global {
   var __STORE_I18N_INSTANCE__: i18nType
 }
 
-const i18n: i18nType = (globalThis.__STORE_I18N_INSTANCE__ ||= i18next.createInstance())
-
 const i18nDefaultInitOptions = {
   resources: {},
   fallbackLng: 'en',
@@ -15,15 +13,17 @@ const i18nDefaultInitOptions = {
     escapeValue: false, // react already safes from xss
   },
   react: {
-    // Avoid Suspense on the server; prevents SSR aborts while waiting for translations
-    useSuspense: false,
+    useSuspense: true,
   },
-  debug: false,
+  debug: true,
   preload: ['en'],
   // backend: {
   //   loadPath: '/locales/{{lng}}/{{ns}}.json',
   // },
 }
+
+const i18n: i18nType = (globalThis.__STORE_I18N_INSTANCE__ ||=
+  i18next.createInstance(i18nDefaultInitOptions))
 
 i18n.use(initReactI18next)
 

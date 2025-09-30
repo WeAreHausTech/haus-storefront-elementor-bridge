@@ -1,12 +1,11 @@
 import { InitOptions, Resource } from 'i18next'
-import { I18nextProvider } from 'react-i18next'
 import { i18n, i18nDefaultInitOptions } from './i18n'
 import { useState } from 'react'
 import Backend from 'i18next-http-backend'
 import { ChildrenProps } from '@haus-storefront-react/shared-types'
 import { useAsyncEffect } from '@haus-storefront-react/common-hooks/use-async-effect'
 import { renderChildren } from '@haus-storefront-react/common-utils'
-import { useSdk } from '@haus-storefront-react/core'
+import { I18nextProvider } from 'react-i18next'
 
 export type ResourceBundle = {
   lng: string
@@ -34,8 +33,6 @@ export const LocalizationProvider = ({
   children,
 }: LocalizationProviderProps) => {
   const [ready, setReady] = useState(false)
-  const { getPlatform } = useSdk()
-  const platform = getPlatform()
 
   useAsyncEffect(async () => {
     if (!i18n.isInitialized) {
@@ -98,18 +95,11 @@ export const LocalizationProvider = ({
     }
 
     if (!locale) {
-      if (platform === 'web') {
-        const lang = document.documentElement.lang
-        const languageCode = lang.split('-')[0]
+      const lang = document.documentElement.lang
+      const languageCode = lang.split('-')[0]
 
-        if (i18n.language !== languageCode) {
-          i18n.changeLanguage(languageCode)
-        }
-      } else {
-        // Default to English for React Native if no locale is provided
-        if (i18n.language !== 'en') {
-          i18n.changeLanguage('en')
-        }
+      if (i18n.language !== languageCode) {
+        i18n.changeLanguage(languageCode)
       }
     } else {
       if (i18n.language !== locale) {
@@ -118,7 +108,7 @@ export const LocalizationProvider = ({
     }
 
     setReady(true)
-  }, [resourceBundles, translationsUrl, i18nOptions, locale, platform])
+  }, [resourceBundles, translationsUrl, i18nOptions, locale])
 
   const loadResourceBundles = async () => {
     if (resourceBundles) {
@@ -152,7 +142,6 @@ export const LocalizationProvider = ({
       })
 
       const a11yTranslations = await Promise.all(a11yPromises)
-
       const loadPromises = resourceBundles.map(async (resourceBundle) => {
         a11yTranslations.forEach(({ lng, translation }) => {
           if (lng === resourceBundle.lng) {

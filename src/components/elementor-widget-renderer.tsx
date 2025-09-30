@@ -237,7 +237,7 @@ export class ElementorWidgetRenderer {
         <React.StrictMode>
           <DataProvider {...this.dataProviderProps}>
             <LocalizationProvider
-              i18nOptions={{ debug: false }}
+              // i18nOptions={{ debug: false }}
               {...this.localizationProviderProps}
             >
               {widgetWithProps}
