@@ -429,50 +429,50 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/common-hooks@npm:0.0.42":
-  version: 0.0.42
-  resolution: "@haus-storefront-react/common-hooks@npm:0.0.42"
+"@haus-storefront-react/common-hooks@npm:0.0.44":
+  version: 0.0.44
+  resolution: "@haus-storefront-react/common-hooks@npm:0.0.44"
   dependencies:
-    "@haus-storefront-react/common-utils": "npm:0.0.42"
-  checksum: 10c0/cf76993bc8a8c92232233fb3bbcb95e7b4440bf5e89dcaf3c7c3b46b8da846750c18ed0c8e51d3af87310852a69e5c2425d7ffda36a505c7e9e6c7c7c03616fc
+    "@haus-storefront-react/common-utils": "npm:0.0.44"
+  checksum: 10c0/bea4a45557d82359d12ca670f3e1a7654f363503672f2732320ef8005f9e8d366e2f10106e316ed6badfae846509c3afeee9c2a3e5fe901492a0423a40abb0a6
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/common-utils@npm:0.0.42":
-  version: 0.0.42
-  resolution: "@haus-storefront-react/common-utils@npm:0.0.42"
+"@haus-storefront-react/common-utils@npm:0.0.44":
+  version: 0.0.44
+  resolution: "@haus-storefront-react/common-utils@npm:0.0.44"
   dependencies:
-    "@haus-storefront-react/shared-types": "npm:0.0.42"
-  checksum: 10c0/dfb7086646c88ee9b6d0c2942198a86f810f9dad35d0daf49e94161c028f7cc004435c3a175483fdd816740cea07197d55dd8c66b385467c6442f709a84cb5f5
+    "@haus-storefront-react/shared-types": "npm:0.0.44"
+  checksum: 10c0/d447b0be7d3de0d2774a1a410f304d7b96eb6619543de83712c751bd99c94ccd5b0ed6d0a1abf94b010ad3ad88776f3e8ad57a52ac1181ba7e074b7fa3acef02
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/core@npm:0.0.42, @haus-storefront-react/core@npm:^0.0.42":
-  version: 0.0.42
-  resolution: "@haus-storefront-react/core@npm:0.0.42"
+"@haus-storefront-react/core@npm:0.0.44, @haus-storefront-react/core@npm:^0.0.44":
+  version: 0.0.44
+  resolution: "@haus-storefront-react/core@npm:0.0.44"
   dependencies:
-    "@haus-storefront-react/common-hooks": "npm:0.0.42"
-    "@haus-storefront-react/common-utils": "npm:0.0.42"
-    "@haus-storefront-react/shared-types": "npm:0.0.42"
-  checksum: 10c0/71034d57044acb547959b284a17eb884e2ab67696135d51466a786aafda0f52fd71485ced2d2206db101df3258f1a2e39a43bff5f9b3cce2dd79bf2e64d64ef9
+    "@haus-storefront-react/common-hooks": "npm:0.0.44"
+    "@haus-storefront-react/common-utils": "npm:0.0.44"
+    "@haus-storefront-react/shared-types": "npm:0.0.44"
+  checksum: 10c0/778b8f5bbb2cb6711f02970b18b5343e1906589fe9e78ca178873b9160e553f83c8b638dfbd0baa8b627514e163d279434eba90500ee6454a030b09cb15ffdaa
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/hooks@npm:^0.0.42":
-  version: 0.0.42
-  resolution: "@haus-storefront-react/hooks@npm:0.0.42"
+"@haus-storefront-react/hooks@npm:^0.0.44":
+  version: 0.0.44
+  resolution: "@haus-storefront-react/hooks@npm:0.0.44"
   dependencies:
-    "@haus-storefront-react/common-utils": "npm:0.0.42"
-    "@haus-storefront-react/core": "npm:0.0.42"
-    "@haus-storefront-react/shared-types": "npm:0.0.42"
-  checksum: 10c0/a5561f673482bfa0aaf84029602db0355907c837e22f749dfe16ae8a33d9739b12722a588ca793b00f8995f323c7aff4440308eaab5d70bba34360de55aea256
+    "@haus-storefront-react/common-utils": "npm:0.0.44"
+    "@haus-storefront-react/core": "npm:0.0.44"
+    "@haus-storefront-react/shared-types": "npm:0.0.44"
+  checksum: 10c0/43190552e03b2579b250ce247e5d2607b7371f21fa5897a7002018550c98b23c3fa52c398c6a2341e5963f8ec7aa8224dd327debcb161263b30ff149b0b6d806
   languageName: node
   linkType: hard
 
-"@haus-storefront-react/shared-types@npm:0.0.42, @haus-storefront-react/shared-types@npm:^0.0.42":
-  version: 0.0.42
-  resolution: "@haus-storefront-react/shared-types@npm:0.0.42"
-  checksum: 10c0/dfc23e6e80cc85fe524fc91a63968dd53ae1d0e3a3e609215327e02e389bd1fadb7a7a8448333d3d30afd87b8ed0782e7ca1419e81d67b92984162fc3eb15ec4
+"@haus-storefront-react/shared-types@npm:0.0.44, @haus-storefront-react/shared-types@npm:^0.0.44":
+  version: 0.0.44
+  resolution: "@haus-storefront-react/shared-types@npm:0.0.44"
+  checksum: 10c0/02d9aa93ae62c401a0e70d4054f47cca318cbb0605503632cbc41d0b37d53f0f3279942de74207a20fe40813d143d33e2d97413ed39b6c28d19fe2471a82e14e
   languageName: node
   linkType: hard
 
@@ -664,7 +664,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-node-resolve@npm:^15.0.0":
+"@rollup/plugin-node-resolve@npm:^15.3.1":
   version: 15.3.1
   resolution: "@rollup/plugin-node-resolve@npm:15.3.1"
   dependencies:
@@ -1022,21 +1022,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^19.1.9":
-  version: 19.1.9
-  resolution: "@types/react-dom@npm:19.1.9"
+"@types/react-dom@npm:^19.2.0":
+  version: 19.2.0
+  resolution: "@types/react-dom@npm:19.2.0"
   peerDependencies:
-    "@types/react": ^19.0.0
-  checksum: 10c0/34c8dda86c1590b3ef0e7ecd38f9663a66ba2dd69113ba74fb0adc36b83bbfb8c94c1487a2505282a5f7e5e000d2ebf36f4c0fd41b3b672f5178fd1d4f1f8f58
+    "@types/react": ^19.2.0
+  checksum: 10c0/73ba326c8bc53e7bb597aa8e66ce4aabd79e501f744e1386278f0c63f1be6d78cca71a8269af3565206f296675116109a3ccbed4038409614fabf8405e54c6ef
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.1.16":
-  version: 19.1.16
-  resolution: "@types/react@npm:19.1.16"
+"@types/react@npm:^19.2.0":
+  version: 19.2.0
+  resolution: "@types/react@npm:19.2.0"
   dependencies:
     csstype: "npm:^3.0.2"
-  checksum: 10c0/3d781f715f15f308b601d74142fae77c65679c318a3bb0a319df898f39095e738ba7ed7061cec971b19b6d33969ef9cd50fec92b034024ef3fcc25bb9a2eb3d0
+  checksum: 10c0/a280e146df2abd3b06eaa2f5332dade9f7ebe916334a40699ee11139c5f22aeb49b5b78b6de8c55b53ef2fa94285e1bc2feaf4fbce6fe259a7de92dc1bf67b17
   languageName: node
   linkType: hard
 
@@ -1776,26 +1776,26 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "haus-storefront-elementor-bridge@workspace:."
   dependencies:
-    "@haus-storefront-react/core": "npm:^0.0.42"
-    "@haus-storefront-react/hooks": "npm:^0.0.42"
-    "@haus-storefront-react/shared-types": "npm:^0.0.42"
+    "@haus-storefront-react/core": "npm:^0.0.44"
+    "@haus-storefront-react/hooks": "npm:^0.0.44"
+    "@haus-storefront-react/shared-types": "npm:^0.0.44"
     "@haus-tech/prettier-config": "npm:^1.0.3"
-    "@rollup/plugin-node-resolve": "npm:^15.0.0"
+    "@rollup/plugin-node-resolve": "npm:^15.3.1"
     "@rollup/plugin-terser": "npm:^0.4.4"
     "@tanstack/react-query": "npm:^5.90.2"
     "@types/lodash": "npm:^4.17.20"
-    "@types/react": "npm:^19.1.16"
-    "@types/react-dom": "npm:^19.1.9"
+    "@types/react": "npm:^19.2.0"
+    "@types/react-dom": "npm:^19.2.0"
     "@vitejs/plugin-react": "npm:^4.7.0"
-    i18next: "npm:^25.5.2"
+    i18next: "npm:^25.5.3"
     i18next-http-backend: "npm:^3.0.2"
     lodash: "npm:^4.17.21"
     path: "npm:^0.12.7"
-    react: "npm:19.1.1"
-    react-dom: "npm:19.1.1"
+    react: "npm:19.2.0"
+    react-dom: "npm:19.2.0"
     react-i18next: "npm:15.7.4"
-    typescript: "npm:^5.9.2"
-    vite: "npm:^7.1.7"
+    typescript: "npm:^5.9.3"
+    vite: "npm:^7.1.8"
     vite-plugin-dts: "npm:^4.5.4"
   languageName: unknown
   linkType: soft
@@ -1854,9 +1854,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^25.5.2":
-  version: 25.5.2
-  resolution: "i18next@npm:25.5.2"
+"i18next@npm:^25.5.3":
+  version: 25.5.3
+  resolution: "i18next@npm:25.5.3"
   dependencies:
     "@babel/runtime": "npm:^7.27.6"
   peerDependencies:
@@ -1864,7 +1864,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/25db34d17e8f11f0cd52d9ddc9c2e5942800aaaa20d0f40563aa1c50e958abd553d82ab3acf2b50ed46530c8d5cf0d5d5ccaf4d75df660c96083f78c83553438
+  checksum: 10c0/0ebd20b9b06a7390561d5718579b3d5da7664df50e61d9a5d03bb0c9ded8dc9924ebaacb4b2aebb272caf153968f30766532f244ac63403d4927c8be533fbfd6
   languageName: node
   linkType: hard
 
@@ -2438,14 +2438,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:19.1.1":
-  version: 19.1.1
-  resolution: "react-dom@npm:19.1.1"
+"react-dom@npm:19.2.0":
+  version: 19.2.0
+  resolution: "react-dom@npm:19.2.0"
   dependencies:
-    scheduler: "npm:^0.26.0"
+    scheduler: "npm:^0.27.0"
   peerDependencies:
-    react: ^19.1.1
-  checksum: 10c0/8c91198510521299c56e4e8d5e3a4508b2734fb5e52f29eeac33811de64e76fe586ad32c32182e2e84e070d98df67125da346c3360013357228172dbcd20bcdd
+    react: ^19.2.0
+  checksum: 10c0/fa2cae05248d01288e91523b590ce4e7635b1e13f1344e225f850d722a8da037bf0782f63b1c1d46353334e0c696909b82e582f8cad607948fde6f7646cc18d9
   languageName: node
   linkType: hard
 
@@ -2477,10 +2477,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:19.1.1":
-  version: 19.1.1
-  resolution: "react@npm:19.1.1"
-  checksum: 10c0/8c9769a2dfd02e603af6445058325e6c8a24b47b185d0e461f66a6454765ddcaecb3f0a90184836c68bb509f3c38248359edbc42f0d07c23eb500a5c30c87b4e
+"react@npm:19.2.0":
+  version: 19.2.0
+  resolution: "react@npm:19.2.0"
+  checksum: 10c0/1b6d64eacb9324725bfe1e7860cb7a6b8a34bc89a482920765ebff5c10578eb487e6b46b2f0df263bd27a25edbdae2c45e5ea5d81ae61404301c1a7192c38330
   languageName: node
   linkType: hard
 
@@ -2619,10 +2619,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.26.0":
-  version: 0.26.0
-  resolution: "scheduler@npm:0.26.0"
-  checksum: 10c0/5b8d5bfddaae3513410eda54f2268e98a376a429931921a81b5c3a2873aab7ca4d775a8caac5498f8cbc7d0daeab947cf923dbd8e215d61671f9f4e392d34356
+"scheduler@npm:^0.27.0":
+  version: 0.27.0
+  resolution: "scheduler@npm:0.27.0"
+  checksum: 10c0/4f03048cb05a3c8fddc45813052251eca00688f413a3cee236d984a161da28db28ba71bd11e7a3dd02f7af84ab28d39fb311431d3b3772fed557945beb00c452
   languageName: node
   linkType: hard
 
@@ -2897,13 +2897,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.9.2":
-  version: 5.9.2
-  resolution: "typescript@npm:5.9.2"
+"typescript@npm:^5.9.3":
+  version: 5.9.3
+  resolution: "typescript@npm:5.9.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/cd635d50f02d6cf98ed42de2f76289701c1ec587a363369255f01ed15aaf22be0813226bff3c53e99d971f9b540e0b3cc7583dbe05faded49b1b0bed2f638a18
+  checksum: 10c0/6bd7552ce39f97e711db5aa048f6f9995b53f1c52f7d8667c1abdc1700c68a76a308f579cd309ce6b53646deb4e9a1be7c813a93baaf0a28ccd536a30270e1c5
   languageName: node
   linkType: hard
 
@@ -2917,13 +2917,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.9.2#optional!builtin<compat/typescript>":
-  version: 5.9.2
-  resolution: "typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>::version=5.9.2&hash=5786d5"
+"typescript@patch:typescript@npm%3A^5.9.3#optional!builtin<compat/typescript>":
+  version: 5.9.3
+  resolution: "typescript@patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/34d2a8e23eb8e0d1875072064d5e1d9c102e0bdce56a10a25c0b917b8aa9001a9cf5c225df12497e99da107dc379360bc138163c66b55b95f5b105b50578067e
+  checksum: 10c0/ad09fdf7a756814dce65bc60c1657b40d44451346858eea230e10f2e95a289d9183b6e32e5c11e95acc0ccc214b4f36289dcad4bf1886b0adb84d711d336a430
   languageName: node
   linkType: hard
 
@@ -3014,9 +3014,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^7.1.7":
-  version: 7.1.7
-  resolution: "vite@npm:7.1.7"
+"vite@npm:^7.1.8":
+  version: 7.1.8
+  resolution: "vite@npm:7.1.8"
   dependencies:
     esbuild: "npm:^0.25.0"
     fdir: "npm:^6.5.0"
@@ -3065,7 +3065,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/3f6bd61a65aaa81368f4dda804f0e23b103664724218ccb5a0b1a0c7e284df498107b57ced951dc40ae4c5d472435bc8fb5c836414e729ee7e102809eaf6ff80
+  checksum: 10c0/fcbd6582c84c4e4ce744b0c51f5c6db94905074a7aadeee8abf27c6211d0d660da2becab28f5b80bb17fe90213e50a2830f3d791bf16b2e6bc790c1b9aa55c73
   languageName: node
   linkType: hard
 
