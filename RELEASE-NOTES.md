@@ -1,6 +1,1 @@
-# Changes
-
-{{CHANGELOG}}
-
----
- Generated automatically from commits.
+- no changes
