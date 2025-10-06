@@ -13,22 +13,9 @@
                 "fix",
                 "bug"
             ]
-        },
-        {
-            "title": "Maintenance",
-            "labels": [
-                "chore",
-                "refactor",
-                "ci"
-            ]
-        },
-        {
-            "title": "Tests",
-            "labels": [
-                "test"
-            ]
         }
     ],
-    "template": "# Changes\n\n{{CHANGELOG}}\n\n---\n Generated automatically from commits.",
-    "pr_template": "- {{TITLE}} ({{URL}})"
+    "template": "## Version {{TO_TAG}}\n\n{{CHANGELOG}}\n",
+    "pr_template": "- {{TITLE}} ({{URL}})",
+    "fallback_to_all_commits": true
 }

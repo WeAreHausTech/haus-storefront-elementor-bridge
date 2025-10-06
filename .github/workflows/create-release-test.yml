@@ -9,7 +9,7 @@ on:
       version:
         description: "Version number"
         required: true
-        default: "v1.0.0-dev"
+        default: "v1.0.0-test"
 
 permissions:
   contents: write
@@ -69,15 +69,22 @@ jobs:
         uses: mikepenz/release-changelog-builder-action@v5
         with:
           configuration: ".github/release-changelog-config.json"
-          fromTag: v0.0.0
           toTag: ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Create or update RELEASE-NOTES.md
-      - name: Update RELEASE-NOTES.md
+      - name: Save release notes (append)
         run: |
-          echo "${{ steps.notes.outputs.changelog || 'No changelog generated.' }}" > RELEASE-NOTES.md
+          NEW_NOTES="${{ steps.notes.outputs.changelog || 'No changelog generated.' }}"
+          if [ -f RELEASE-NOTES.md ]; then
+            TEMP_FILE=$(mktemp)
+            echo -e "$NEW_NOTES\n---\n" > $TEMP_FILE
+            cat RELEASE-NOTES.md >> $TEMP_FILE
+            mv $TEMP_FILE RELEASE-NOTES.md
+          else
+            echo -e "$NEW_NOTES\n---\n" > RELEASE-NOTES.md
+          fi
           cat RELEASE-NOTES.md
 
       # Commit updated files back to branch
