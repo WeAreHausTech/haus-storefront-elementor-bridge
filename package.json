@@ -1,6 +1,6 @@
 {
   "name": "haus-storefront-elementor-bridge",
-  "version": "1.0.0",
+  "version": "1.0.0-test",
   "description": "Elementor bridge for Haus storefront components",
   "main": "dist/host.js",
   "type": "module",

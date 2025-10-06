@@ -1,3 +1,6 @@
-# Release Notes
+# Changes
 
-All notable changes to this project will be documented here.
+{{CHANGELOG}}
+
+---
+ Generated automatically from commits.
