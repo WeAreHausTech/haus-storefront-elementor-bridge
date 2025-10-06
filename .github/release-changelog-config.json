@@ -13,6 +13,14 @@
                 "fix",
                 "bug"
             ]
+        },
+        {
+            "title": "Maintenance",
+            "labels": [
+                "chore",
+                "refactor",
+                "ci"
+            ]
         }
     ],
     "template": "## Version {{TO_TAG}}\n\n{{CHANGELOG}}\n",
