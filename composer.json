@@ -1,6 +1,6 @@
 {
   "name": "wearehaustech/haus-storefront-elementor-bridge",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "haus-storefront-elementor-bridge",
   "require": {
     "php": "^8.1",
