@@ -1,8 +1,3 @@
-## 📦 Uncategorized
+# Release Notes
 
-- Feat/productlist
-   - PR: #1
-- chore: Update dependencies to version 0.0.32-3 and add ConditionalTem…
-   - PR: #2
-
-
+All notable changes to this project will be documented here.
