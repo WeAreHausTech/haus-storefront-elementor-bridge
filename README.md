@@ -4,13 +4,14 @@ A Composer package that registers Elementor widgets for Haus e‑commerce compon
 
 ## Publish package
 
-1. Make sure release notes are updated
-2. Create and push a tag:
+1. Create and push a tag:
    ```bash
    git tag <version number>  # including v, e.g. v1.0.0
    git push --tags
    ```
-3. The GitHub workflow will automatically trigger a new release
+2. The GitHub workflow will automatically trigger a new release
+3. Release notes will be generated automatically from conventional commits
+4. Version will be synced to composer.json and package.json
 
 ## Installation
 
@@ -50,7 +51,7 @@ add_filter('haus_enabled_widgets', function (array $widgets) {
 
 1. Create a PHP class in `src/Widgets/YourWidget.php` extending `\Elementor\Widget_Base`.
 2. Add the widget to `src/config/WidgetConfig.php` by defining a new key and mapping it to your class.
-3. Enable it via the `haus_enabled_widgets` filter in customer repository(see above).
+3. Enable it via the `haus_enabled_widgets` filter in customer repository (see above).
 
 ## Using attribute helpers in \_propsFn.ts
 
@@ -89,7 +90,7 @@ The bridge includes a flexible event listener system that allows customers to cu
 
 ### Default Event Listeners
 
-The bridge provides default event listeners
+The bridge provides default event listeners for common e-commerce events like add to cart.
 
 ### Custom Event Listeners
 
