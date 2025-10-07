@@ -6,6 +6,7 @@ import {
   LocalizationProvider,
   LocalizationProviderProps,
 } from './localization/LocalizationProvider'
+import { GlobalEventProvider } from './event-listeners/event-provider'
 
 export type ConditionalTemplateProps = {
   conditions: {
@@ -240,7 +241,7 @@ export class ElementorWidgetRenderer {
               // i18nOptions={{ debug: false }}
               {...this.localizationProviderProps}
             >
-              {widgetWithProps}
+              <GlobalEventProvider>{widgetWithProps}</GlobalEventProvider>
             </LocalizationProvider>
           </DataProvider>
         </React.StrictMode>,
