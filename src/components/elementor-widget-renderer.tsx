@@ -172,7 +172,6 @@ export class ElementorWidgetRenderer {
       }
     })
 
-    console.log('props', props)
     if (props.product) {
       props.productId = props.product
       delete props.product
