@@ -2,7 +2,9 @@ import {
   orderLineChannel,
   useEventBusOn,
   OrderLinePayload,
+  useSdk,
 } from "@haus-storefront-react/core";
+import { clearEcommerceData, pushToDataLayer, getPrice, itemFacets } from "./gtm";
 
 export type EventConfig = {
   event: string;
@@ -16,8 +18,32 @@ const EVENT_CONFIGS: EventConfig[] = [
     channel: orderLineChannel,
     handler: (payload: OrderLinePayload) => {
       console.log("trigger gtm add_to_cart", payload);
-    },
-  },
+
+      const { getFeature } = useSdk()
+      const pricesIncludeTax = getFeature('pricesIncludeTax')
+      const productVariant = payload.orderLine?.productVariant
+      const product = productVariant?.product
+      const facets = itemFacets(product?.facetValues || [])
+      const price = getPrice(productVariant?.price, productVariant?.priceWithTax, pricesIncludeTax)
+
+      clearEcommerceData()
+      pushToDataLayer('add_to_cart', {
+        ecommerce: {
+          value: price * payload.payload?.quantity,
+          currency: productVariant?.currencyCode,
+          items: [
+            {
+              item_id: productVariant?.sku,
+              item_name: productVariant?.name,
+              value: price,
+              quantity: payload.payload?.quantity,
+              ...facets,
+            },
+          ],
+        },
+      })
+    }
+  }
 ];
 
 export const DEFAULT_EVENTS = EVENT_CONFIGS.map((config) => config.event);
