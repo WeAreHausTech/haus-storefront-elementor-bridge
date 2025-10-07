@@ -1,0 +1,178 @@
+{
+  "account": {
+    "accountDropdown": {
+      "aria": {},
+      "alt": {}
+    },
+    "addressForm": {
+      "aria": {},
+      "alt": {}
+    },
+    "billingAddress": {
+      "aria": {},
+      "alt": {}
+    },
+    "customerDetails": {
+      "aria": {},
+      "alt": {}
+    },
+    "login": {
+      "aria": {},
+      "alt": {}
+    },
+    "orders": {
+      "aria": {},
+      "alt": {}
+    },
+    "shippingAddress": {
+      "aria": {},
+      "alt": {}
+    }
+  },
+  "addToCartButton": {
+    "aria": {
+      "addButton": "Lägg till",
+      "subtractButton": "Ta bort",
+      "quantityValue": "Använd pil upp eller ner för att ändra antal"
+    },
+    "alt": {}
+  },
+  "cartPrice": {
+    "aria": {},
+    "alt": {}
+  },
+  "checkout": {
+    "aria": {},
+    "alt": {}
+  },
+  "completeOrder": {
+    "aria": {},
+    "alt": {}
+  },
+  "dropdownCart": {
+    "aria": {},
+    "alt": {}
+  },
+  "general": {
+    "aria": {},
+    "alt": {}
+  },
+  "order": {
+    "aria": {},
+    "alt": {}
+  },
+  "orderConfirmation": {
+    "aria": {},
+    "alt": {}
+  },
+  "orderLines": {
+    "aria": {
+      "removeFromCart": "Ta bort produkt från varukorg",
+      "itemRemoved": "Produkt borttagen"
+    },
+    "alt": {}
+  },
+  "orderView": {
+    "aria": {},
+    "alt": {}
+  },
+  "pagination": {
+    "aria": {
+      "showing": "Visar {{amount}} av {{totalItems}} produkter",
+      "showMore": "Visa mer produkter i listan"
+    },
+    "alt": {}
+  },
+  "productDetail": {
+    "aria": {
+      "addToCart": "Lägg i varukorg",
+      "quantityLabel": "{{quantity}} stycken ({{formattedPrice}})",
+      "chooseNumberOfItems": "Välj antal"
+    },
+    "alt": {},
+    "aria-live": {
+      "addToCart": "Lade till {{quantity}} stycken {{productName}} i varukorgen"
+    }
+  },
+  "productVariantOptions": {
+    "aria": {
+      "selectOption": "Välj {{optionGroupName}}",
+      "selectedVariant": "Vald variant {{name}}"
+    },
+    "alt": {}
+  },
+  "productList": {
+    "aria": {
+      "linkToProduct": "Länk till {{productName}}"
+    },
+    "alt": {}
+  },
+  "searchField": {
+    "aria": {},
+    "alt": {}
+  },
+  "selectAddress": {
+    "aria": {},
+    "alt": {}
+  },
+  "selectCountry": {
+    "aria": {},
+    "alt": {}
+  },
+  "setCustomerForOrder": {
+    "aria": {},
+    "alt": {}
+  },
+  "setOrderAddress": {
+    "aria": {},
+    "alt": {}
+  },
+  "urls": {
+    "aria": {},
+    "alt": {}
+  },
+  "filter": {
+    "aria": {
+      "filterBy": "Filtrera på {{value}}",
+      "clearFilters": "Rensa alla filter"
+    },
+    "aria-live": {
+      "allFiltersCleared": "Alla filter har tagits bort"
+    },
+    "alt": {}
+  },
+  "sort": {
+    "aria": {},
+    "aria-live": {
+      "sortUpdatedTo": "Sorteringsordningen har uppdaterats till {{value}} "
+    },
+    "alt": {}
+  },
+  "facetValueFilter": {
+    "aria": {},
+    "aria-live": {
+      "filterAdded": "{{value}} har lagts till som filter",
+      "filterRemoved": "Filtrering på {{value}} har tagits bort"
+    },
+    "alt": {}
+  },
+  "priceFilter": {
+    "aria": {
+      "filterBy": "Filtrera på pris"
+    },
+    "alt": {}
+  },
+  "rangeSlider": {
+    "aria": {
+      "minValue": "Ange det lägsta värdet",
+      "maxValue": "Ange det högsta värdet"
+    },
+    "alt": {}
+  },
+  "imageCarousel": {
+    "aria": {
+      "label": "Bildkarusell"
+    },
+    "alt": {}
+  }
+}
