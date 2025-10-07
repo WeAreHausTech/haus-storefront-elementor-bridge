@@ -133,7 +133,8 @@
   },
   "filter": {
     "aria": {
-      "filterBy": "Filter by {{value}}"
+      "filterBy": "Filter by {{value}}",
+      "clearFilters": "Clear all filters"
     },
     "aria-live": {
       "allFiltersCleared": "All filters have been removed"
