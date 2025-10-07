@@ -1,0 +1,108 @@
+name: Create Release
+
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - "v*" # triggers on tags like v1.0.0, v2.3.1
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version number"
+        required: true
+        default: "v1.0.0-dev"
+
+jobs:
+  create_release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout full repo history so changelog can detect commits/tags
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Extract version number (strip 'v' prefix)
+      - name: Extract version
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION=${{ github.event.inputs.version }}
+          else
+            VERSION=${GITHUB_REF_NAME}
+          fi
+          CLEAN_VERSION=${VERSION#v}
+          echo "version=$CLEAN_VERSION" >> $GITHUB_OUTPUT
+
+      # Update version in composer.json
+      - name: Sync version to composer.json
+        run: |
+          jq --arg ver "${{ steps.version.outputs.version }}" '.version = $ver' composer.json > composer.tmp && mv composer.tmp composer.json
+          cat composer.json
+
+      # Update version in package.json
+      - name: Sync version to package.json
+        run: |
+          jq --arg ver "${{ steps.version.outputs.version }}" '.version = $ver' package.json > package.tmp && mv package.tmp package.json
+
+      # Setup PHP
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          tools: composer
+
+      # Install PHP dependencies
+      - name: Install PHP dependencies
+        run: composer install --no-dev --no-interaction --no-progress --optimize-autoloader
+
+      # Generate release notes automatically from conventional commits
+      - name: Generate release notes
+        id: notes
+        uses: mikepenz/release-changelog-builder-action@v5
+        with:
+          configuration: ".github/release-changelog-config.json"
+          toTag: ${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Prepare files for packaging
+      - name: Prepare release files
+        run: |
+          mkdir -p ./tmp
+          cp -r ./src ./composer.json ./composer.lock ./README.md ./tmp
+          if [ -d "./dist" ]; then cp -r ./dist ./tmp; fi
+
+      # Create ZIP file
+      - name: Create ZIP file
+        run: |
+          cd tmp
+          zip -r ../release.zip .
+          cd ..
+
+      # Create GitHub Release with attached ZIP
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.version || github.ref_name }}
+          name: ${{ github.event.inputs.version || github.ref_name }}
+          body: ${{ steps.notes.outputs.changelog || 'Release notes generated automatically.' }}
+          draft: false
+          prerelease: false
+          files: ./release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Commit the updated composer.json, package.json and RELEASE-NOTES.md
+      - name: Commit updated files
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          echo "${{ steps.notes.outputs.changelog }}" > RELEASE-NOTES.md
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add composer.json package.json RELEASE-NOTES.md
+          git commit -m "chore(release): sync version and update release notes for ${{ github.ref_name }}"
+          git push
