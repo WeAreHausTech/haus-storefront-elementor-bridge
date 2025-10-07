@@ -2,6 +2,16 @@
 
 A Composer package that registers Elementor widgets for Haus e‑commerce components and wires them to React renderers.
 
+## Publish package
+
+1. Make sure release notes are updated
+2. Create and push a tag:
+   ```bash
+   git tag <version number>  # including v, e.g. v1.0.0
+   git push --tags
+   ```
+3. The GitHub workflow will automatically trigger a new release
+
 ## Installation
 
 ```bash

@@ -1,0 +1,21 @@
+{
+    "categories": [
+        {
+            "title": "Features",
+            "labels": [
+                "feat",
+                "feature"
+            ]
+        },
+        {
+            "title": "Fixes",
+            "labels": [
+                "fix",
+                "bug"
+            ]
+        }
+    ],
+    "template": "## Version {{TO_TAG}}\n\n{{CHANGELOG}}\n",
+    "pr_template": "- {{TITLE}} ({{URL}})",
+    "fallback_to_all_commits": true
+}
