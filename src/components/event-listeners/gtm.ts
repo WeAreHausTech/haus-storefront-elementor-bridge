@@ -2,7 +2,7 @@ import { FacetValue, Price } from "@haus-storefront-react/shared-types"
 
 declare global {
   interface Window {
-      dataLayer: any
+      dataLayer: Record<string, unknown>[]
       gtmBrandFacetCode: string
       gtmCategoryFacetCode: string
   }
