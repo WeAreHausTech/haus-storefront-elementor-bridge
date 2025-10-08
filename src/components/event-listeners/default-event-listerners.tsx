@@ -62,7 +62,7 @@ const EVENT_CONFIGS: EventConfig[] = [
         return {
           item_id: line.productVariant.sku,
           item_name: line.productVariant.name,
-          price: getPrice(line.unitPrice, line.unitPriceWithTax, pricesIncludeTax),
+          value: getPrice(line.unitPrice, line.unitPriceWithTax, pricesIncludeTax),
           quantity: line.quantity,
           ...facets,
         }
