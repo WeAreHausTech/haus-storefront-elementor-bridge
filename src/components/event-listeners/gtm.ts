@@ -1,10 +1,10 @@
-import { FacetValue, Price } from "@haus-storefront-react/shared-types"
+import { FacetValue, Price } from '@haus-storefront-react/shared-types'
 
 declare global {
   interface Window {
-      dataLayer: Record<string, unknown>[]
-      gtmBrandFacetCode: string
-      gtmCategoryFacetCode: string
+    dataLayer: Record<string, unknown>[]
+    gtmBrandFacetCode: string
+    gtmCategoryFacetCode: string
   }
 }
 
