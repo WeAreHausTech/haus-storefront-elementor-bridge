@@ -4,23 +4,23 @@ import {
   OrderLinePayload,
   checkoutChannel,
   useSdk,
-} from "@haus-storefront-react/core";
-import { Order, OrderLine } from "@haus-storefront-react/shared-types";
-import { clearEcommerceData, pushToDataLayer, getPrice, itemFacets } from "./gtm";
-import { map } from "lodash";
+} from '@haus-storefront-react/core'
+import { Order, OrderLine } from '@haus-storefront-react/shared-types'
+import { clearEcommerceData, pushToDataLayer, getPrice, itemFacets } from './gtm'
+import { map } from 'lodash'
 
 export type EventConfig = {
-  event: string;
-  channel: any;
-  handler: (sdk: any, ...args: any[]) => void;
-};
+  event: string
+  channel: any
+  handler: (sdk: any, ...args: any[]) => void
+}
 
 const createEventConfigs = (): EventConfig[] => [
   {
-    event: "orderline:added",
+    event: 'orderline:added',
     channel: orderLineChannel,
     handler: (sdkInstance: any, payload: OrderLinePayload) => {
-      console.log("trigger gtm add_to_cart", payload);
+      console.log('trigger gtm add_to_cart', payload)
 
       const { getFeature } = sdkInstance
       const pricesIncludeTax = getFeature('pricesIncludeTax')
@@ -45,15 +45,15 @@ const createEventConfigs = (): EventConfig[] => [
           ],
         },
       })
-    }
+    },
   },
   {
-    event: "checkout:start",
+    event: 'checkout:start',
     channel: checkoutChannel,
-    handler: (order: Order) => {
-      console.log("trigger gtm begin_checkout", order);
+    handler: (sdkInstance: any, order: Order) => {
+      console.log('trigger gtm begin_checkout', order)
 
-      const { getFeature } = useSdk()
+      const { getFeature } = sdkInstance
       const pricesIncludeTax = getFeature('pricesIncludeTax')
       const items = map(order.lines, (line: OrderLine) => {
         const facetValues = line.productVariant.product.facetValues
@@ -67,7 +67,7 @@ const createEventConfigs = (): EventConfig[] => [
           ...facets,
         }
       })
-      
+
       clearEcommerceData()
       pushToDataLayer('begin_checkout', {
         ecommerce: {
@@ -78,19 +78,17 @@ const createEventConfigs = (): EventConfig[] => [
       })
     },
   },
-];
+]
 
-export const DEFAULT_EVENTS = ["orderline:added"];
+export const DEFAULT_EVENTS = ['orderline:added', 'checkout:start']
 
-export function useDefaultEventListeners(
-  overrides: { [key: string]: boolean } = {}
-) {
-  const sdk = useSdk();
-  const eventConfigs = createEventConfigs();
-  
+export function useDefaultEventListeners(overrides: { [key: string]: boolean } = {}) {
+  const sdk = useSdk()
+  const eventConfigs = createEventConfigs()
+
   eventConfigs.forEach(({ event, channel, handler }) => {
     if (!overrides[event]) {
-      useEventBusOn(channel, event, (payload: OrderLinePayload) => handler(sdk, payload));
+      useEventBusOn(channel, event, (payload: any) => handler(sdk, payload))
     }
-  });
+  })
 }
