@@ -12,17 +12,17 @@ import { map } from "lodash";
 export type EventConfig = {
   event: string;
   channel: any;
-  handler: (...args: any[]) => void;
+  handler: (sdk: any, ...args: any[]) => void;
 };
 
-const EVENT_CONFIGS: EventConfig[] = [
+const createEventConfigs = (): EventConfig[] => [
   {
     event: "orderline:added",
     channel: orderLineChannel,
-    handler: (payload: OrderLinePayload) => {
+    handler: (sdkInstance: any, payload: OrderLinePayload) => {
       console.log("trigger gtm add_to_cart", payload);
 
-      const { getFeature } = useSdk()
+      const { getFeature } = sdkInstance
       const pricesIncludeTax = getFeature('pricesIncludeTax')
       const productVariant = payload.orderLine?.productVariant
       const product = productVariant?.product
@@ -80,14 +80,17 @@ const EVENT_CONFIGS: EventConfig[] = [
   },
 ];
 
-export const DEFAULT_EVENTS = EVENT_CONFIGS.map((config) => config.event);
+export const DEFAULT_EVENTS = ["orderline:added"];
 
 export function useDefaultEventListeners(
   overrides: { [key: string]: boolean } = {}
 ) {
-  EVENT_CONFIGS.forEach(({ event, channel, handler }) => {
+  const sdk = useSdk();
+  const eventConfigs = createEventConfigs();
+  
+  eventConfigs.forEach(({ event, channel, handler }) => {
     if (!overrides[event]) {
-      useEventBusOn(channel, event, handler);
+      useEventBusOn(channel, event, (payload: OrderLinePayload) => handler(sdk, payload));
     }
   });
 }
