@@ -9,6 +9,7 @@ export {
   type ConditionalTemplateProps,
   type CustomTemplateProps,
 } from './components/ConditionalTemplate'
+export { GoogleTaskManager, type GoogleTaskManagerProps } from './components/GoogleTaskManager'
 export {
   GlobalEventProvider,
   useEventListenerManager,
