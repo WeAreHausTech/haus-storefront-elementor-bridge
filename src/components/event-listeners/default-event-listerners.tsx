@@ -88,7 +88,7 @@ export function useDefaultEventListeners(overrides: { [key: string]: boolean } =
 
   eventConfigs.forEach(({ event, channel, handler }) => {
     if (!overrides[event]) {
-      useEventBusOn(channel, event, (payload: any) => handler(sdk, payload))
+      useEventBusOn(channel, event, (payload: any) => handler(sdk, payload), undefined, false)
     }
   })
 }

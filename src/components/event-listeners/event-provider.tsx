@@ -7,7 +7,7 @@ let eventListenersRegistered = false
 
 function useCustomEventListeners(eventConfigs: EventConfig[], sdk: any) {
   eventConfigs.forEach(({ event, channel, handler }) => {
-    useEventBusOn(channel, event as any, (payload: any) => handler(sdk, payload))
+    useEventBusOn(channel, event as any, (payload: any) => handler(sdk, payload), undefined, false)
   })
 }
 
