@@ -1,53 +1,49 @@
-import React from "react";
-import { useDefaultEventListeners } from "./default-event-listerners";
-import { DEFAULT_EVENTS, EventConfig } from "./default-event-listerners";
-import { useEventBusOn, useSdk } from "@haus-storefront-react/core";
+import React from 'react'
+import { useDefaultEventListeners } from './default-event-listerners'
+import { DEFAULT_EVENTS, EventConfig } from './default-event-listerners'
+import { useEventBusOn, useSdk } from '@haus-storefront-react/core'
 
-let eventListenersRegistered = false;
+let eventListenersRegistered = false
 
 function useCustomEventListeners(eventConfigs: EventConfig[], sdk: any) {
   eventConfigs.forEach(({ event, channel, handler }) => {
-    useEventBusOn(channel, event as any, (payload: any) => handler(sdk, payload));
-  });
+    useEventBusOn(channel, event as any, (payload: any) => handler(sdk, payload))
+  })
 }
 
 export function useEventListenerManager(customEventConfigs?: EventConfig[]) {
-  const sdk = useSdk();
-  
+  const sdk = useSdk()
+
   if (!eventListenersRegistered) {
-    const overrides: { [key: string]: boolean } = {};
+    const overrides: { [key: string]: boolean } = {}
 
     if (customEventConfigs) {
       DEFAULT_EVENTS.forEach((event) => {
-        overrides[event] = true;
-      });
+        overrides[event] = true
+      })
     }
 
-    useDefaultEventListeners(overrides);
+    useDefaultEventListeners(overrides)
 
     if (customEventConfigs) {
-      useCustomEventListeners(customEventConfigs, sdk);
+      useCustomEventListeners(customEventConfigs, sdk)
     }
 
-    eventListenersRegistered = true;
+    eventListenersRegistered = true
   }
 }
 
 interface GlobalEventProviderProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
-export const GlobalEventProvider: React.FC<GlobalEventProviderProps> = ({
-  children,
-}) => {
+export const GlobalEventProvider: React.FC<GlobalEventProviderProps> = ({ children }) => {
   const eventConfigs =
-    typeof window !== "undefined"
-      ? (window as any).CUSTOM_EVENT_LISTENERS
-      : undefined;
+    typeof window !== 'undefined' ? (window as any).CUSTOM_EVENT_LISTENERS : undefined
 
-  useEventListenerManager(eventConfigs);
+  useEventListenerManager(eventConfigs)
 
-  return <>{children}</>;
-};
+  return <>{children}</>
+}
 
-export type CustomEventListeners = EventConfig[];
+export type CustomEventListeners = EventConfig[]
