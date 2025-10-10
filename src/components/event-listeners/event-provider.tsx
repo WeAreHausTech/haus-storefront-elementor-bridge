@@ -11,9 +11,7 @@ function useCustomEventListeners(eventConfigs: EventConfig[], sdk: any) {
   })
 }
 
-export function useEventListenerManager(customEventConfigs?: EventConfig[]) {
-  const sdk = useSdk()
-
+export function useEventListenerManager(sdk: any, customEventConfigs?: EventConfig[]) {
   if (!eventListenersRegistered) {
     const overrides: { [key: string]: boolean } = {}
 
@@ -23,7 +21,7 @@ export function useEventListenerManager(customEventConfigs?: EventConfig[]) {
       })
     }
 
-    useDefaultEventListeners(overrides)
+    useDefaultEventListeners(overrides, sdk)
 
     if (customEventConfigs) {
       useCustomEventListeners(customEventConfigs, sdk)
@@ -38,10 +36,11 @@ interface GlobalEventProviderProps {
 }
 
 export const GlobalEventProvider: React.FC<GlobalEventProviderProps> = ({ children }) => {
+  const sdk = useSdk()
   const eventConfigs =
     typeof window !== 'undefined' ? (window as any).CUSTOM_EVENT_LISTENERS : undefined
 
-  useEventListenerManager(eventConfigs)
+  useEventListenerManager(sdk, eventConfigs)
 
   return <>{children}</>
 }
