@@ -10,6 +10,8 @@ export {
   type CustomTemplateProps,
 } from './components/ConditionalTemplate'
 export { GoogleTaskManager, type GoogleTaskManagerProps } from './components/GoogleTaskManager'
+export { ViewItemEvent } from './components/ViewItemEvent'
+export { PurchaseEvent } from './components/PurchaseEvent'
 export {
   GlobalEventProvider,
   useEventListenerManager,

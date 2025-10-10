@@ -1,43 +1,33 @@
-import React, { useEffect } from 'react'
-import { pushToDataLayer } from '../event-listeners/gtm'
+import React, { Suspense } from 'react'
+import { ViewItemEvent } from './ViewItemEvent'
+import { PurchaseEvent } from './PurchaseEvent'
 
 export interface GoogleTaskManagerProps {
   analyticsEvent?: string
-  product?: string
-  [key: string]: any
+  productId?: string
 }
 
 export const GoogleTaskManager: React.FC<GoogleTaskManagerProps> = ({
   analyticsEvent,
-  product,
-  ...props
+  productId,
 }) => {
-  useEffect(() => {
-    if (!analyticsEvent) {
-      console.warn('GoogleTaskManager: No analytics event specified')
-      return
-    }
-
-    const eventData: Record<string, unknown> = {
-      event: analyticsEvent,
-    }
-
-    if (product) {
-      eventData.item_id = product
-    }
-
-    Object.keys(props).forEach((key) => {
-      if (key !== 'analyticsEvent' && key !== 'product' && props[key] !== undefined) {
-        eventData[key] = props[key]
-      }
-    })
-
-    pushToDataLayer(analyticsEvent, eventData)
-
-    console.log(`GoogleTaskManager: Triggered GTM event "${analyticsEvent}"`, eventData)
-  }, [analyticsEvent, product, props])
-
-  return null
+  switch (analyticsEvent) {
+    case 'purchase':
+      return (
+        <Suspense fallback={<div></div>}>
+          <PurchaseEvent />
+        </Suspense>
+      )
+    case 'view-item':
+      return (
+        <Suspense fallback={<div></div>}>
+          <ViewItemEvent productId={productId || ''} />
+        </Suspense>
+      )
+    default:
+      console.warn(`GoogleTaskManager: Unknown event type "${analyticsEvent}"`)
+      return <div></div>
+  }
 }
 
 export default GoogleTaskManager

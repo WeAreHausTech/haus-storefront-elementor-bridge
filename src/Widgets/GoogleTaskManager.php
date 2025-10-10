@@ -1,11 +1,10 @@
 <?php
-
 namespace Haus\StorefrontElementorBridge\Widgets;
 
 use \Elementor\Widget_Base;
+
 class GoogleTaskManager extends Widget_Base
 {
-    use ElementorTemplate;
 
     public function get_name()
     {
@@ -62,13 +61,13 @@ class GoogleTaskManager extends Widget_Base
     protected function render()
     {
         $url = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+        $settings = $this->get_settings_for_display();
+
 
         if (strpos($url, '&action=elementor') !== false) {
-            $this->getTemplate();
             return;
         }
 
-        $settings = $this->get_settings_for_display();
         $widgetId = 'ecom_' . $this->get_id();
         $productId = get_the_ID();
         $vendureProductId = get_post_meta($productId, 'vendure_id', true) ?? '';
@@ -77,12 +76,15 @@ class GoogleTaskManager extends Widget_Base
         <div 
             id="<?= $widgetId ?>"
             class="ecom-components-root" 
-            data-vendure-token="<?= VENDURE_TOKEN?>"
-            data-vendure-api-url="<?= VENDURE_API_URL ?>"
-            data-analytics-event="<?= $settings['gtm-event'] ?>"
-            data-product="<?=$vendureProductId?>"
+            data-analytics-event="<?= esc_attr($settings['gtm_event']) ?>"
+            data-product="<?= esc_attr($vendureProductId) ?>"
             data-widget-type="google-task-manager">
         </div>
         <?php
+    }
+
+    public function get_script_depends()
+    {
+        return ['google-task-manager'];
     }
 }
