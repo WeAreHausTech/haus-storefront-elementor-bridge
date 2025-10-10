@@ -3,10 +3,10 @@ import {
   useEventBusOn,
   OrderLinePayload,
   checkoutChannel,
-  useSdk,
 } from '@haus-storefront-react/core'
-import { Order, OrderLine } from '@haus-storefront-react/shared-types'
 import { clearEcommerceData, pushToDataLayer, getPrice, itemFacets } from './gtm'
+import { Order } from '@haus-storefront-react/shared-types'
+import { OrderLine } from '@haus-storefront-react/shared-types'
 import { map } from 'lodash'
 
 export type EventConfig = {
@@ -15,7 +15,7 @@ export type EventConfig = {
   handler: (sdk: any, ...args: any[]) => void
 }
 
-const createEventConfigs = (): EventConfig[] => [
+const EVENT_CONFIGS: EventConfig[] = [
   {
     event: 'orderline:added',
     channel: orderLineChannel,
@@ -80,13 +80,10 @@ const createEventConfigs = (): EventConfig[] => [
   },
 ]
 
-export const DEFAULT_EVENTS = ['orderline:added', 'checkout:start']
+export const DEFAULT_EVENTS = EVENT_CONFIGS.map((config) => config.event)
 
-export function useDefaultEventListeners(overrides: { [key: string]: boolean } = {}) {
-  const sdk = useSdk()
-  const eventConfigs = createEventConfigs()
-
-  eventConfigs.forEach(({ event, channel, handler }) => {
+export function useDefaultEventListeners(overrides: { [key: string]: boolean } = {}, sdk: any) {
+  EVENT_CONFIGS.forEach(({ event, channel, handler }) => {
     if (!overrides[event]) {
       useEventBusOn(channel, event, (payload: any) => handler(sdk, payload), undefined, false)
     }
