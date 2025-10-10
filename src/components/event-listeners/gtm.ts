@@ -1,10 +1,10 @@
-import { FacetValue, Price } from "@haus-storefront-react/shared-types"
+import { FacetValue, Price } from '@haus-storefront-react/shared-types'
 
 declare global {
   interface Window {
-      dataLayer: any
-      gtmBrandFacetCode: string
-      gtmCategoryFacetCode: string
+    dataLayer: Record<string, unknown>[]
+    gtmBrandFacetCode: string
+    gtmCategoryFacetCode: string
   }
 }
 
@@ -18,7 +18,7 @@ export const clearEcommerceData = () => {
 
 export const pushToDataLayer = (event: string, data: Record<string, unknown>) => {
   if (window.dataLayer) {
-    window.dataLayer.push({ event, data })
+    window.dataLayer.push({ event, ...data })
   } else {
     console.log('dataLayer is not defined')
   }
