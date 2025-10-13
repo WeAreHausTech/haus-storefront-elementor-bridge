@@ -42,7 +42,7 @@ class EventTrigger extends Widget_Base
         );
 
         $this->add_control(
-            'gtm_event',
+            'event_type',
             [
                 'label' => __('Event type', 'haus-ecom-widgets'),
                 'type' => \Elementor\Controls_Manager::SELECT,
@@ -76,7 +76,7 @@ class EventTrigger extends Widget_Base
         <div 
             id="<?= $widgetId ?>"
             class="ecom-components-root" 
-            data-analytics-event="<?= esc_attr($settings['gtm_event']) ?>"
+            data-analytics-event="<?= esc_attr($settings['event_type']) ?>"
             data-product-id="<?= esc_attr($vendureProductId) ?>"
             data-widget-type="event-trigger">
         </div>
