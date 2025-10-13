@@ -1,4 +1,3 @@
-import React, { Suspense } from 'react'
 import { ViewItemEvent } from './ViewItemEvent'
 import { PurchaseEvent } from './PurchaseEvent'
 
@@ -7,23 +6,12 @@ export interface GoogleTaskManagerProps {
   productId?: string
 }
 
-export const GoogleTaskManager: React.FC<GoogleTaskManagerProps> = ({
-  analyticsEvent,
-  productId,
-}) => {
+export const GoogleTaskManager = ({ analyticsEvent, productId }: GoogleTaskManagerProps) => {
   switch (analyticsEvent) {
     case 'purchase':
-      return (
-        <Suspense fallback={<div></div>}>
-          <PurchaseEvent />
-        </Suspense>
-      )
+      return <PurchaseEvent />
     case 'view-item':
-      return (
-        <Suspense fallback={<div></div>}>
-          <ViewItemEvent productId={productId || ''} />
-        </Suspense>
-      )
+      return <ViewItemEvent productId={productId || ''} />
     default:
       console.warn(`GoogleTaskManager: Unknown event type "${analyticsEvent}"`)
       return null

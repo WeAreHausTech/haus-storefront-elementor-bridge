@@ -77,7 +77,7 @@ class GoogleTaskManager extends Widget_Base
             id="<?= $widgetId ?>"
             class="ecom-components-root" 
             data-analytics-event="<?= esc_attr($settings['gtm_event']) ?>"
-            data-product="<?= esc_attr($vendureProductId) ?>"
+            data-product-id="<?= esc_attr($vendureProductId) ?>"
             data-widget-type="google-task-manager">
         </div>
         <?php
