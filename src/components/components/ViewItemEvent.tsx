@@ -19,7 +19,7 @@ export const ViewItemEvent = ({ productId }: ViewItemEventProps) => {
   const pricesIncludeTax = getFeature('pricesIncludeTax')
   const { data: product } = useProduct({ id: stringProductId }, !!stringProductId)
 
-  console.log('trigger gtm view_item', product)
+  
 
   useEffect(() => {
     if (product) {
