@@ -20,7 +20,7 @@ export const PurchaseEvent = () => {
     }
   }, [order, pricesIncludeTax])
 
-  return <div></div>
+  return null
 }
 
 const handlePurchase = (order: Order, pricesIncludeTax: boolean) => {
