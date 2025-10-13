@@ -1,21 +1,21 @@
 import { ViewItemEvent } from './ViewItemEvent'
 import { PurchaseEvent } from './PurchaseEvent'
 
-export interface GoogleTaskManagerProps {
+export interface EventTriggerProps {
   analyticsEvent?: string
   productId?: string
 }
 
-export const GoogleTaskManager = ({ analyticsEvent, productId }: GoogleTaskManagerProps) => {
+export const EventTrigger = ({ analyticsEvent, productId }: EventTriggerProps) => {
   switch (analyticsEvent) {
     case 'purchase':
       return <PurchaseEvent />
     case 'view-item':
       return <ViewItemEvent productId={productId || ''} />
     default:
-      console.warn(`GoogleTaskManager: Unknown event type "${analyticsEvent}"`)
+      console.warn(`EventTrigger: Unknown event type "${analyticsEvent}"`)
       return null
   }
 }
 
-export default GoogleTaskManager
+export default EventTrigger

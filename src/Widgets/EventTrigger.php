@@ -3,17 +3,17 @@ namespace Haus\StorefrontElementorBridge\Widgets;
 
 use \Elementor\Widget_Base;
 
-class GoogleTaskManager extends Widget_Base
+class EventTrigger extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'GoogleTaskManager';
+        return 'EventTrigger';
     }
 
     public function get_title()
     {
-        return esc_html__('GoogleTaskManager', 'haus-ecom-widgets');
+        return esc_html__('EventTrigger', 'haus-ecom-widgets');
     }
 
     public function get_icon()
@@ -28,7 +28,7 @@ class GoogleTaskManager extends Widget_Base
 
     public function get_keywords()
     {
-        return ['Ecommerce', 'google', 'analytics', 'tracking', 'ga', 'gtm'];
+        return ['Ecommerce', 'event', 'google', 'analytics', 'tracking', 'ga', 'gtm'];
     }
 
 
@@ -37,7 +37,7 @@ class GoogleTaskManager extends Widget_Base
         $this->start_controls_section(
             'section_content',
             [
-                'label' => __('Filter settings', 'haus-ecom-widgets'),
+                'label' => __('Event settings', 'haus-ecom-widgets'),
             ]
         );
 
@@ -78,13 +78,13 @@ class GoogleTaskManager extends Widget_Base
             class="ecom-components-root" 
             data-analytics-event="<?= esc_attr($settings['gtm_event']) ?>"
             data-product-id="<?= esc_attr($vendureProductId) ?>"
-            data-widget-type="google-task-manager">
+            data-widget-type="event-trigger">
         </div>
         <?php
     }
 
     public function get_script_depends()
     {
-        return ['google-task-manager'];
+        return ['event-trigger'];
     }
 }

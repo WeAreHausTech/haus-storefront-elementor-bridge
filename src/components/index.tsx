@@ -9,7 +9,7 @@ export {
   type ConditionalTemplateProps,
   type CustomTemplateProps,
 } from './components/ConditionalTemplate'
-export { GoogleTaskManager, type GoogleTaskManagerProps } from './components/GoogleTaskManager'
+export { EventTrigger, type EventTriggerProps } from './components/EventTrigger'
 export { ViewItemEvent } from './components/ViewItemEvent'
 export { PurchaseEvent } from './components/PurchaseEvent'
 export {
