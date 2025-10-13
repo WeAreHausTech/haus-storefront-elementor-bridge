@@ -12,7 +12,7 @@ export const ViewItemEvent = ({ productId }: ViewItemEventProps) => {
 
   if (!stringProductId || stringProductId === 'undefined' || stringProductId === 'null') {
     console.warn('ViewItemEvent: Invalid productId', productId)
-    return <div></div>
+    return 
   }
 
   const { getFeature } = useSdk()
