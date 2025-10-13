@@ -27,7 +27,7 @@ export const ViewItemEvent = ({ productId }: ViewItemEventProps) => {
     }
   }, [product, pricesIncludeTax])
 
-  return <div></div>
+  return null
 }
 
 const handleViewItem = (product: any, pricesIncludeTax: boolean) => {
