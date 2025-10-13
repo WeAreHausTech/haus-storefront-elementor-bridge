@@ -12,7 +12,6 @@ export const PurchaseEvent = () => {
   const { getFeature } = useSdk()
   const pricesIncludeTax = getFeature('pricesIncludeTax')
 
-  console.log('trigger gtm purchase', order)
 
   useEffect(() => {
     if (order && order.code) {
