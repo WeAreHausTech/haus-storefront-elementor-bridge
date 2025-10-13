@@ -26,7 +26,7 @@ export const GoogleTaskManager: React.FC<GoogleTaskManagerProps> = ({
       )
     default:
       console.warn(`GoogleTaskManager: Unknown event type "${analyticsEvent}"`)
-      return <div></div>
+      return null
   }
 }
 
