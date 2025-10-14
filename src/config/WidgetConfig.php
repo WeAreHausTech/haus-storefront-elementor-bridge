@@ -17,6 +17,7 @@ interface AvailableWidgets
     const CART_ICON_WIDGET = 'cart-icon-widget';
     const ACCOUNT_DROPDOWN_WIDGET = 'account-dropdown-widget';
     const CONDITIONAL_TEMPLATE_WIDGET = 'conditional-template-widget';
+    const EVENT_TRIGGER_WIDGET = 'event-trigger-widget';
 }
 
 class WidgetConfig implements AvailableWidgets
@@ -35,6 +36,7 @@ class WidgetConfig implements AvailableWidgets
         self::CART_ICON_WIDGET => \Haus\StorefrontElementorBridge\Widgets\CartIcon::class,
         self::ACCOUNT_DROPDOWN_WIDGET => \Haus\StorefrontElementorBridge\Widgets\AccountDropdown::class,
         self::CONDITIONAL_TEMPLATE_WIDGET => \Haus\StorefrontElementorBridge\Widgets\ConditionalTemplate::class,
+        self::EVENT_TRIGGER_WIDGET => \Haus\StorefrontElementorBridge\Widgets\EventTrigger::class,
     ];
 
     /**

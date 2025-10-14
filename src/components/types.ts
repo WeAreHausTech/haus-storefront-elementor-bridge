@@ -22,3 +22,8 @@ export type AccountMenuItem = {
 export type AccountDropdownAttributes = {
   menuItems: AccountMenuItem[];
 };
+
+export type EventTriggerProps = {
+  analyticsEvent?: string
+  productId?: string
+}

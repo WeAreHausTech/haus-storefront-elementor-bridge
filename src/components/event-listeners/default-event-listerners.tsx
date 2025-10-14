@@ -3,11 +3,12 @@ import {
   useEventBusOn,
   OrderLinePayload,
   checkoutChannel,
+  productChannel,
 } from '@haus-storefront-react/core'
 import { clearEcommerceData, pushToDataLayer, getPrice, itemFacets } from './gtm'
-import { Order } from '@haus-storefront-react/shared-types'
+import { Order, Product } from '@haus-storefront-react/shared-types'
 import { OrderLine } from '@haus-storefront-react/shared-types'
-import { map } from 'lodash'
+import { map, reduce } from 'lodash-es'
 
 export type EventConfig = {
   event: string
@@ -20,8 +21,6 @@ const EVENT_CONFIGS: EventConfig[] = [
     event: 'orderline:added',
     channel: orderLineChannel,
     handler: (sdkInstance: any, payload: OrderLinePayload) => {
-      console.log('trigger gtm add_to_cart', payload)
-
       const { getFeature } = sdkInstance
       const pricesIncludeTax = getFeature('pricesIncludeTax')
       const productVariant = payload.orderLine?.productVariant
@@ -51,8 +50,6 @@ const EVENT_CONFIGS: EventConfig[] = [
     event: 'checkout:start',
     channel: checkoutChannel,
     handler: (sdkInstance: any, order: Order) => {
-      console.log('trigger gtm begin_checkout', order)
-
       const { getFeature } = sdkInstance
       const pricesIncludeTax = getFeature('pricesIncludeTax')
       const items = map(order.lines, (line: OrderLine) => {
@@ -74,6 +71,85 @@ const EVENT_CONFIGS: EventConfig[] = [
           currency: order.currencyCode,
           value: getPrice(order.total, order.totalWithTax, pricesIncludeTax),
           items: items,
+        },
+      })
+    },
+  },
+  {
+    event: 'checkout:purchase',
+    channel: checkoutChannel,
+    handler: (sdkInstance: any, order: Order) => {
+      const { getFeature } = sdkInstance
+      const pricesIncludeTax = getFeature('pricesIncludeTax')
+      const shipping = reduce(
+        order.shippingLines || [],
+        (acc, line) => {
+          return acc + Number(getPrice(line.price, line.priceWithTax, pricesIncludeTax))
+        },
+        0,
+      )
+
+      const tax = reduce(
+        order.taxSummary || [],
+        (acc, tax) => {
+          return acc + tax.taxTotal / 100
+        },
+        0,
+      )
+
+      const items = map(order.lines || [], (line: OrderLine) => {
+        const facetValues = line.productVariant.product.facetValues || []
+        const facets = itemFacets(facetValues)
+
+        return {
+          item_id: line.productVariant.sku,
+          item_name: line.productVariant.name,
+          price: getPrice(line.unitPrice, line.unitPriceWithTax, pricesIncludeTax),
+          quantity: line.quantity,
+          ...facets,
+        }
+      })
+
+      clearEcommerceData()
+      pushToDataLayer('purchase', {
+        ecommerce: {
+          transaction_id: order.code,
+          value: getPrice(order.total, order.totalWithTax, pricesIncludeTax),
+          tax: tax,
+          shipping: shipping,
+          currency: order.currencyCode,
+          items: items,
+        },
+      })
+    },
+  },
+  {
+    event: 'product:viewed',
+    channel: productChannel,
+    handler: (sdkInstance: any, product: Product) => {
+      const { getFeature } = sdkInstance
+      const pricesIncludeTax = getFeature('pricesIncludeTax')
+      const facetValues = product.facetValues || []
+      const facets = itemFacets(facetValues)
+      const productVariant = product.variants?.[0]
+
+      if (!productVariant) return
+
+      const price = getPrice(productVariant.price, productVariant.priceWithTax, pricesIncludeTax)
+
+      clearEcommerceData()
+      pushToDataLayer('view_item', {
+        ecommerce: {
+          value: price,
+          currency: productVariant.currencyCode,
+          items: [
+            {
+              item_id: productVariant.sku,
+              item_name: product.name,
+              value: price,
+              ...facets,
+            },
+          ],
         },
       })
     },
