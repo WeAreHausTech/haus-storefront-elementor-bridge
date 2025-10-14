@@ -35,7 +35,7 @@ interface GlobalEventProviderProps {
   children: React.ReactNode
 }
 
-export const GlobalEventProvider: React.FC<GlobalEventProviderProps> = ({ children }) => {
+export const GlobalEventProvider = ({ children }: GlobalEventProviderProps) => {
   const sdk = useSdk()
   const eventConfigs =
     typeof window !== 'undefined' ? (window as any).CUSTOM_EVENT_LISTENERS : undefined

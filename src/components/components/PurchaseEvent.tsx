@@ -10,8 +10,6 @@ export const PurchaseEvent = () => {
 
   const emitPurchase = useEventBusEmit(checkoutChannel, 'checkout:purchase')
 
-  console.log('PurchaseEvent: ', order)
-
   useEffect(() => {
     if (order) {
       emitPurchase(order)

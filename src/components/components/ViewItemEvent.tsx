@@ -12,8 +12,6 @@ export const ViewItemEvent = ({ productId }: ViewItemEventProps) => {
 
   const emitViewItem = useEventBusEmit(productChannel, 'product:viewed')
 
-  console.log('ViewItemEvent: ', product)
-
   useEffect(() => {
     if (product) {
       emitViewItem(product)
