@@ -9,7 +9,8 @@ export {
   type ConditionalTemplateProps,
   type CustomTemplateProps,
 } from './components/ConditionalTemplate'
-export { EventTrigger, type EventTriggerProps } from './components/EventTrigger'
+export { ViewItemEvent, type ViewItemEventProps } from './components/ViewItemEvent'
+export { PurchaseEvent } from './components/PurchaseEvent'
 export {
   GlobalEventProvider,
   useEventListenerManager,
