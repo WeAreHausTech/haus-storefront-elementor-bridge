@@ -70,7 +70,7 @@ class EventTrigger extends Widget_Base
 
         $widgetId = 'ecom_' . $this->get_id();
         $productId = get_the_ID();
-        $vendureProductId = get_post_meta($productId, 'vendure_id', true) ?? '';
+        $vendureProductId = get_post_meta($productId, 'vendure_id', true) ?: '';
 
         ?>
         <div 
