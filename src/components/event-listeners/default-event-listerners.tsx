@@ -8,7 +8,7 @@ import {
 import { clearEcommerceData, pushToDataLayer, getPrice, itemFacets } from './gtm'
 import { Order, Product } from '@haus-storefront-react/shared-types'
 import { OrderLine } from '@haus-storefront-react/shared-types'
-import { map, reduce } from 'lodash'
+import { map, reduce } from 'lodash-es'
 
 export type EventConfig = {
   event: string
