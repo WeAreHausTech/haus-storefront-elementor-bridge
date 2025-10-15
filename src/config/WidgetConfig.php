@@ -1,6 +1,6 @@
 <?php
 
-namespace Haus\StorefrontElementorBridge\config;
+namespace Haus\StorefrontElementorBridge\Config;
 
 /**
  * Available widget types
