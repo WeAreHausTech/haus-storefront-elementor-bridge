@@ -4,13 +4,13 @@ on:
   push:
     # Sequence of patterns matched against refs/tags
     tags:
-      - "v*" # triggers on tags like v1.0.0, v2.3.1
+      - 'v*' # triggers on tags like v1.0.0, v2.3.1
   workflow_dispatch:
     inputs:
       version:
-        description: "Version number"
+        description: 'Version number'
         required: true
-        default: "v1.0.0-dev"
+        default: 'v1.0.0-dev'
 
 jobs:
   create_release:
@@ -36,12 +36,6 @@ jobs:
           CLEAN_VERSION=${VERSION#v}
           echo "version=$CLEAN_VERSION" >> $GITHUB_OUTPUT
 
-      # Update version in composer.json
-      - name: Sync version to composer.json
-        run: |
-          jq --arg ver "${{ steps.version.outputs.version }}" '.version = $ver' composer.json > composer.tmp && mv composer.tmp composer.json
-          cat composer.json
-
       # Update version in package.json
       - name: Sync version to package.json
         run: |
@@ -51,7 +45,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.1"
+          php-version: '8.1'
           tools: composer
 
       # Install PHP dependencies
@@ -63,7 +57,7 @@ jobs:
         id: notes
         uses: mikepenz/release-changelog-builder-action@v5
         with:
-          configuration: ".github/release-changelog-config.json"
+          configuration: '.github/release-changelog-config.json'
           toTag: ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -103,6 +97,6 @@ jobs:
           echo "${{ steps.notes.outputs.changelog }}" > RELEASE-NOTES.md
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add composer.json package.json RELEASE-NOTES.md
+          git add package.json RELEASE-NOTES.md
           git commit -m "chore(release): sync version and update release notes for ${{ github.ref_name }}"
           git push
