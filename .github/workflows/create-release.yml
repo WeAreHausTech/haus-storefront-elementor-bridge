@@ -90,13 +90,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Commit the updated composer.json, package.json and RELEASE-NOTES.md
+      # Commit the updated package.json and RELEASE-NOTES.md
       - name: Commit updated files
         if: ${{ github.event_name == 'push' }}
         run: |
           echo "${{ steps.notes.outputs.changelog }}" > RELEASE-NOTES.md
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+          git fetch origin main
+          git checkout main
           git add package.json RELEASE-NOTES.md
           git commit -m "chore(release): sync version and update release notes for ${{ github.ref_name }}"
-          git push
+          git push origin main
