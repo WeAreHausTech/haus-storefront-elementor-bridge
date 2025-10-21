@@ -5,8 +5,6 @@ import { EnabledFilter } from "@haus-storefront-react/shared-types";
 export function getFiltersAttributes(attrs: NamedNodeMap): FiltersAttributes {
   const base = parseDataAttributes(attrs) as Record<string, unknown>;
 
-  console.log("base", base);
-
   const productListIdentifier = base.productListIdentifier as
     | string
     | undefined;
