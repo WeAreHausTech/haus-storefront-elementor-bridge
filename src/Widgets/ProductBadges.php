@@ -45,7 +45,7 @@ class ProductBadges extends Widget_Base
             [
                 'label' => __('Badge positions', 'haus-ecom-widgets'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'description' => 'Seperate by coma (if empty, all positions will be displayed)',
+                'description' => 'Separate by comma (if empty, all positions will be displayed)',
             ]
         );
 
