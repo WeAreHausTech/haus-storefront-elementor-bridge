@@ -43,7 +43,7 @@ class ProductBadges extends Widget_Base
         $this->add_control(
             'badge_positions',
             [
-                'label' => __('Badge positions', 'haus_ecom_widgets'),
+                'label' => __('Badge positions', 'haus-ecom-widgets'),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'description' => 'Seperate by coma (if empty, all positions will be displayed)',
             ]
