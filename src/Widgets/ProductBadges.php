@@ -116,7 +116,7 @@ class ProductBadges extends Widget_Base
         <div 
             id="<?= $widgetId ?>" 
             class="ecom-components-root" 
-            data-badge-positions="<?= esc_attr($settings['badge_positions']) ?>"
+            data-badges-positions="<?= esc_attr($settings['badge_positions']) ?>"
             data-product-id="<?= esc_attr($vendureProductId) ?>"
             data-widget-type="product-badges">
         </div>
