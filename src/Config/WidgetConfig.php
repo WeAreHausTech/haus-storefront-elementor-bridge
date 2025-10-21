@@ -18,6 +18,7 @@ interface AvailableWidgets
     const ACCOUNT_DROPDOWN_WIDGET = 'account-dropdown-widget';
     const CONDITIONAL_TEMPLATE_WIDGET = 'conditional-template-widget';
     const EVENT_TRIGGER_WIDGET = 'event-trigger-widget';
+    const PRODUCT_BADGES_WIDGET = 'product-badges-widget';
 }
 
 class WidgetConfig implements AvailableWidgets
@@ -37,6 +38,7 @@ class WidgetConfig implements AvailableWidgets
         self::ACCOUNT_DROPDOWN_WIDGET => \Haus\StorefrontElementorBridge\Widgets\AccountDropdown::class,
         self::CONDITIONAL_TEMPLATE_WIDGET => \Haus\StorefrontElementorBridge\Widgets\ConditionalTemplate::class,
         self::EVENT_TRIGGER_WIDGET => \Haus\StorefrontElementorBridge\Widgets\EventTrigger::class,
+        self::PRODUCT_BADGES_WIDGET => \Haus\StorefrontElementorBridge\Widgets\ProductBadges::class,
     ];
 
     /**
