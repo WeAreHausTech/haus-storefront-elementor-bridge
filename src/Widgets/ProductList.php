@@ -53,6 +53,16 @@ class ProductList extends Widget_Base
             ]
         );
 
+        $this->add_control(
+            'button_variant',
+            [
+                'label' => __('Button Variant', 'haus-ecom-widgets'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => $this->get_button_variant_options(),
+                'default' => 'primary',
+                'description' => __('Choose the button variant for product actions.', 'haus-ecom-widgets'),
+            ]
+        );
 
         $this->end_controls_section();
 
@@ -77,9 +87,6 @@ class ProductList extends Widget_Base
         $this->end_controls_section();
 
         $this->getAvailableFacets();
-
-
-        $this->end_controls_section();
     }
 
     public function getAvalibleCollections()
@@ -271,6 +278,13 @@ class ProductList extends Widget_Base
         );
     }
 
+    public function get_button_variant_options()
+    {
+        return apply_filters('haus_ecom_widgets_button_variant_options', [
+            'primary' => __('Primary', 'haus-ecom-widgets'),
+        ]);
+    }
+
     protected function render()
     {
         $settings = $this->get_settings_for_display();
@@ -313,58 +327,52 @@ class ProductList extends Widget_Base
 
         ?>
         <div id="placeholderWrapper" style="position: relative; width: 100%; ">
-            <div id="<?= $widgetId ?>" class="ecom-components-root productlist-widget" data-widget-type="product-list"
-                data-facet="<?= implode(", ", $facets) ?>" data-collection="<?= $taxonomy ?>"
-                data-take="<?= $settings['products_per_page'] ?>"
-                data-pagination-enabled="<?= $settings['pagination_enabled'] ?>"
-                data-product-list-identifier="<?= $settings['product_list_identifier'] ?>" </div>
-                <?php if ($_ENV['ENABLE_SKELETON_PRODUCT_LIST'] === 'true'): ?>
-                    <div id="ph-cards" class="placeholder-cards" style="position:absolute; width: 100%; top: 0; left: 0;">
-                        <?php for ($i = 0; $i < $settings['products_per_page']; $i++): ?>
-                            <div class="placeholder-card">
-                                <div class="placeholder-image"></div>
-                                <div class="placeholder-text"></div>
-                            </div>
-                        <?php endfor; ?>
-                    </div>
-                <?php endif; ?>
-            </div>
+            <div id="<?= $widgetId ?>" class="ecom-components-root productlist-widget" data-widget-type="product-list" data-facet="<?= implode(", ", $facets) ?>" data-collection="<?= $taxonomy ?>" data-take="<?= $settings['products_per_page'] ?>" data-pagination-enabled="<?= $settings['pagination_enabled'] ?>" data-product-list-identifier="<?= $settings['product_list_identifier'] ?>" data-button-variant="<?= $settings['button_variant'] ?>"></div>
+            <?php if ($_ENV['ENABLE_SKELETON_PRODUCT_LIST'] === 'true'): ?>
+                <div
+                    id="ph-cards" class="placeholder-cards" style="position:absolute; width: 100%; top: 0; left: 0;">
+                    <?php for ($i = 0; $i < $settings['products_per_page']; $i++): ?>
+                        <div class="placeholder-card">
+                            <div class="placeholder-image"></div>
+                            <div class="placeholder-text"></div>
+                        </div>
+                    <?php endfor; ?>
+                </div>
+            <?php endif; ?>
+        </div>
 
 
-            <script>
-                (function () {
-                    const productListWidget = document.getElementById('<?= $widgetId ?>');
-                    const placeholderCards = document.getElementById('ph-cards');
-                    const placeholderCardsHeight = placeholderCards ? placeholderCards.clientHeight : 0;
-                    const placeholderWrapper = document.getElementById('placeholderWrapper');
+        <script>
+            (function () {
+        const productListWidget = document.getElementById('<?= $widgetId ?>');
+        const placeholderCards = document.getElementById('ph-cards');
+        const placeholderCardsHeight = placeholderCards ? placeholderCards.clientHeight : 0;
+        const placeholderWrapper = document.getElementById('placeholderWrapper');
 
-                    if (placeholderCards) {
-                        placeholderWrapper.style.height = `${placeholderCardsHeight}px`;
-                    }
+        if (placeholderCards) {
+        placeholderWrapper.style.height = `${placeholderCardsHeight}px`;
+        }
 
-                    window.addEventListener('product-list:data:changed', function (event) {
-                        if (!productListWidget) {
-                            return;
-                        }
+        window.addEventListener('product-list:data:changed', function (event) {
+        if (! productListWidget) {
+        return;
+        }
 
-                        const handleShadowRootDetected = () => {
-                            if (productListWidget.shadowRoot) {
-                                // Remove or hide the placeholder cards
-                                if (placeholderCards) {
-                                    placeholderCards.remove();
-                                    placeholderWrapper.style.height = 'auto';
-                                }
-                            }
-                        };
+        const handleShadowRootDetected = () => {
+        if (productListWidget.shadowRoot) { // Remove or hide the placeholder cards
+        if (placeholderCards) {
+        placeholderCards.remove();
+        placeholderWrapper.style.height = 'auto';
+        }
+        }
+        };
 
-                        if (productListWidget.shadowRoot) {
-                            handleShadowRootDetected();
-                        }
-                    });
-                })();
-            </script>
-
-            <?php
+        if (productListWidget.shadowRoot) {
+        handleShadowRootDetected();
+        }
+        });
+        })();
+        </script><?php
     }
 
     public function get_script_depends()
