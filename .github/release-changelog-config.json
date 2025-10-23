@@ -17,6 +17,7 @@
     ],
     "template": "## Version #{{TO_TAG}}\n\n#{{CHANGELOG}}\n",
     "pr_template": "- #{{TITLE}} (#{{URL}})",
+    "empty_template": "## Version #{{TO_TAG}}\n\nNo features or fixes found in this release.\n",
     "fallback_to_all_commits": true,
     "ignore_commits": [
         "chore\\(release\\):",
