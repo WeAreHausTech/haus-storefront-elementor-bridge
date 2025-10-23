@@ -1,8 +1,3 @@
-## Version {{TO_TAG}}
-
-{{CHANGELOG}}
-
-
 ## Version v1.0.5
 
 ## Features

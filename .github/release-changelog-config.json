@@ -15,8 +15,8 @@
             ]
         }
     ],
-    "template": "## Version {{TO_TAG}}\n\n{{CHANGELOG}}\n",
-    "pr_template": "- {{TITLE}} ({{URL}})",
+    "template": "## Version #{{TO_TAG}}\n\n#{{CHANGELOG}}\n",
+    "pr_template": "- #{{TITLE}} (#{{URL}})",
     "fallback_to_all_commits": true,
     "ignore_commits": [
         "chore\\(release\\):",
