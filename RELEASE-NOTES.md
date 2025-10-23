@@ -1,14 +1,9 @@
-## Version v1.0.6
-
-No features or fixes found in this release.
-
-
-## Version v1.0.5
+# Version v1.0.5
 
 ## Features
 - Add button variant control to ProductList widget and update related types
 
-## Version v1.0.4
+# Version v1.0.4
 
 ## Features
 - Add PRODUCT_BADGES_WIDGET to WidgetConfig for ProductBadges integration
@@ -17,21 +12,21 @@ No features or fixes found in this release.
 ## Fixes
 - Correct typo in data attribute for badge positions in ProductBadges widget
 
-## Version v1.0.3
+# Version v1.0.3
 
 No features or fixes found in this release.
 
-## Version v1.0.2
+# Version v1.0.2
 
 ## Features
 - Add WidgetConfig class with available widget types and methods for widget management
 
-## Version v1.0.1
+# Version v1.0.1
 
 ## Fixes
 - Correct namespace casing in WidgetConfig.php for consistency
 
-## Version v1.0.0
+# Version v1.0.0
 
 ## Features
 - Add Login and Reset Password widgets with configuration updates
