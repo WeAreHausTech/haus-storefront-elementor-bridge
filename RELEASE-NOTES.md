@@ -1,3 +1,8 @@
+## Version v1.0.6
+
+No features or fixes found in this release.
+
+
 ## Version v1.0.5
 
 ## Features
