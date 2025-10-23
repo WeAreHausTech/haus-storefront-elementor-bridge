@@ -56,11 +56,22 @@ jobs:
       - name: Get previous tag
         id: from_tag
         run: |
-          PREVIOUS_TAG=$(git describe --tags --abbrev=0 ${{ github.ref_name }}^ 2>/dev/null || echo "")
+          # Try multiple methods to get the previous tag
+          PREVIOUS_TAG=""
+
+          # Method 1: Get the second-to-last tag (most reliable)
+          PREVIOUS_TAG=$(git rev-list --tags --skip=1 --max-count=1 2>/dev/null || echo "")
+
+          # Method 2: If that fails, try git describe on HEAD^
           if [ -z "$PREVIOUS_TAG" ]; then
-            # If no previous tag, get the first commit
+            PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+          fi
+
+          # Method 3: If still no tag, get the first commit
+          if [ -z "$PREVIOUS_TAG" ]; then
             PREVIOUS_TAG=$(git rev-list --max-parents=0 HEAD)
           fi
+
           echo "tag=$PREVIOUS_TAG" >> $GITHUB_OUTPUT
           echo "Previous tag: $PREVIOUS_TAG"
 
