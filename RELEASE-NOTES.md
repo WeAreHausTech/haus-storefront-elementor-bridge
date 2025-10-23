@@ -18,7 +18,7 @@ No features or fixes in release.
 
 # Version v1.0.3
 
-No features or fixes found in this release.
+No features or fixes in release.
 
 # Version v1.0.2
 
