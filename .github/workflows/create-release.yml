@@ -52,15 +52,47 @@ jobs:
       - name: Install PHP dependencies
         run: composer install --no-dev --no-interaction --no-progress --optimize-autoloader
 
+      # Get previous tag for changelog generation
+      - name: Get previous tag
+        id: from_tag
+        run: |
+          # Try multiple methods to get the previous tag
+          PREVIOUS_TAG=""
+
+          # Method 1: Get the second-to-last tag (most reliable)
+          PREVIOUS_TAG=$(git rev-list --tags --skip=1 --max-count=1 2>/dev/null || echo "")
+
+          # Method 2: If that fails, try git describe on HEAD^
+          if [ -z "$PREVIOUS_TAG" ]; then
+            PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+          fi
+
+          # Method 3: If still no tag, get the first commit
+          if [ -z "$PREVIOUS_TAG" ]; then
+            PREVIOUS_TAG=$(git rev-list --max-parents=0 HEAD)
+          fi
+
+          echo "tag=$PREVIOUS_TAG" >> $GITHUB_OUTPUT
+          echo "Previous tag: $PREVIOUS_TAG"
+
       # Generate release notes automatically from conventional commits
       - name: Generate release notes
         id: notes
         uses: mikepenz/release-changelog-builder-action@v5
         with:
           configuration: '.github/release-changelog-config.json'
+          fromTag: ${{ steps.from_tag.outputs.tag }}
           toTag: ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Debug: Show generated changelog
+      - name: Debug changelog
+        run: |
+          echo "Generated changelog:"
+          echo "==================="
+          echo "${{ steps.notes.outputs.changelog }}"
+          echo "==================="
 
       # Prepare files for packaging
       - name: Prepare release files
@@ -94,7 +126,21 @@ jobs:
       - name: Commit updated files
         if: ${{ github.event_name == 'push' }}
         run: |
-          echo "${{ steps.notes.outputs.changelog }}" > RELEASE-NOTES.md
+          # Create a temporary file with new release notes
+          echo "${{ steps.notes.outputs.changelog }}" > new-release-notes.md
+          echo "" >> new-release-notes.md
+
+          # If RELEASE-NOTES.md exists, prepend new notes to it
+          if [ -f "RELEASE-NOTES.md" ]; then
+            cat new-release-notes.md RELEASE-NOTES.md > temp-release-notes.md
+            mv temp-release-notes.md RELEASE-NOTES.md
+          else
+            mv new-release-notes.md RELEASE-NOTES.md
+          fi
+
+          # Clean up
+          rm -f new-release-notes.md temp-release-notes.md
+
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git fetch origin main
