@@ -11,7 +11,7 @@ A Composer package that registers Elementor widgets for Haus e‑commerce compon
    ```
 2. The GitHub workflow will automatically trigger a new release
 3. Release notes will be generated automatically from conventional commits
-4. Version will be synced to composer.json and package.json
+4. Version will be synced to package.json
 
 ## Installation
 
