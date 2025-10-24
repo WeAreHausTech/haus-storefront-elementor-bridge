@@ -49,7 +49,6 @@ class WidgetRegistrar
                         \Elementor\Plugin::instance()
                             ->widgets_manager
                             ->register(new $widgetClass());
-                        error_log("Haus Bridge: Widget registered - {$widgetKey}");
                     } else {
                         error_log("Haus Bridge: Widget class not found - {$widgetClass}");
                     }
